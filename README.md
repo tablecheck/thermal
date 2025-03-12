@@ -132,19 +132,19 @@ end
 
 #### ✅ Required before 1.0.0 release
 
+- [ ] Add render method instead of flush
 - [ ] Add task to import config from escpos-printer-db
 - [ ] Rename CjkEncoding to RubyEncoding, rename CharmapEncoding, CharsetEncoding, also add IconvEncoding
 - [ ] Encoding classes themselves should validate missing char (move from Escpos::Buffer class)
 - [ ] Iconv config generator rake task.
 - [ ] Set output format for thermal_print (default, base64, bytes, etc.)
 - [ ] Params for escpos: :codepages, escpos: charsets
-- [ ] Copy in Escpos and EscposImage gems
+- [ ] Copy in Escpos and EscposImage gems (get rid of dependency)
 - [ ] Param pass-thru to EscposImage
 - [ ] Configurability of tmp path -- specific to stargraphic (?) -- Should use Tempfile
 - [ ] Write Readme
 - [ ] DslMixin should include protocol (?), ipp_uri (?) -- why??
 - [ ] Specs for all classes, including base.
-- [ ] Remove UNF with and replace with ruby unicode?
 - [ ] StarGraphic needs multiple message buffering. ???
 - [ ] Add QR to DSL
 

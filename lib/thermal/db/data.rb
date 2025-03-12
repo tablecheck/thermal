@@ -62,7 +62,7 @@ module Db
     end
 
     def load_data
-      YAML.load_file(data_path, aliases: true)
+      YAML.safe_load_file(data_path, aliases: true)
     end
 
     def normalize_data!(data)

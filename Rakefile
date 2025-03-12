@@ -2,7 +2,7 @@
 
 require 'bundler/gem_tasks'
 require 'rspec/core/rake_task'
-require_relative 'tasks/thermal.rake'
+# require_relative 'tasks/thermal.rake'
 
 RSpec::Core::RakeTask.new(:spec)
 
