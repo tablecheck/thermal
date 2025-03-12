@@ -1,0 +1,1635 @@
+# Chit Printer definition file.
+# https://github.com/receipt-print-hq/escpos-printer-db
+---
+# TODO: remove this
+cjk_modes:
+  escpos:
+    ja:
+      name: Japanese
+      encoding: shift_jis
+    ko:
+      name: Korean
+      encoding: ksc5601
+    zh-CN:
+      name: Simplified Chinese
+      encoding: gb18030
+    zh-TW:
+      name: Traditional Chinese
+      encoding: big5
+
+# TODO: this will probably need to be refactored
+charsets:
+  # charmap: 0x23 0x24 0x25 0x2A 0x40 0x5B 0x5C 0x5D 0x5E 0x60 0x7B 0x7C 0x7D 0x7E
+  escpos:
+    '0':
+      name: U.S.A.
+      charmap: '#$%*@[\]^`{|}~'
+    '1':
+      name: France
+      charmap: '#$%*à°ç§^`éùè¨'
+    '2':
+      name: Germany
+      charmap: '#$%*§ÄÖÜ^`äöüß'
+    '3':
+      name: U.K.
+      charmap: '£$%*@[\]^`{|}~'
+    '4':
+      name: Denmark I
+      charmap: '#$%*@ÆØÅ^`æøå~'
+    '5':
+      name: Sweden
+      charmap: '#¤%*ÉÄÖÅÜéäöåü'
+    '6':
+      name: Italy
+      charmap: '#$%*@°\é^ùàòèì'
+    '7':
+      name: Spain I
+      charmap: '₧$%*@¡Ñ¿^´¨ñ}~'
+    '8':
+      name: Japan
+      charmap: '#$%*@[¥]^`{|}~'
+    '9':
+      name: Norway
+      charmap: '#¤%*ÉÆØÅÜéæøåü'
+    '10':
+      name: Denmark II
+      charmap: '#$%*ÉÆØÅÜéæøåü'
+    '11':
+      name: Spain II
+      charmap: '#$%*á¡Ñ¿é´íñóú'
+    '12':
+      name: Latin America
+      charmap: '#$%*@¡Ñ¿éüíñóú'
+    '13':
+      name: Korea
+      charmap: '#$%*@[₩]^`{|}~'
+    '14':
+      name: Slovenia / Croatia
+      charmap: '#$%*ŽŠĐĆČžšđćč'
+    '15':
+      name: China
+      charmap: '#Ұ%*@[\]^`{|}~'
+    '16':
+      name: Vietnam
+      charmap: '₫$%*@[\]^`{|}~'
+    '17':
+      name: Arabia
+      charmap: '#$٪٭@[\]^`{|}~'
+    '64':
+      name: Legal
+      charmap: '#$%*§°´"¶`©®†™'
+      notes: 'This is used in the Brother PT-9800PCN/PT-9700PC series'
+    '66':
+      name: India (Devanagari)
+    '67':
+      name: India (Bengali)
+    '68':
+      name: India (Tamil)
+    '69':
+      name: India (Telugu)
+    '70':
+      name: India (Assamese)
+    '71':
+      name: India (Oriya)
+    '72':
+      name: India (Kannada)
+    '73':
+      name: India (Malayalam)
+    '74':
+      name: India (Gujarati)
+    '75':
+      name: India (Punjabi)
+    '82':
+      name: India (Marathi)
+
+encodings:
+  cp437:
+    name: CP437 - OEM United States
+    iconv: CP437
+    ruby: IBM437
+  cp720:
+    name: CP720 - Arabic (Transparent ASMO)
+    charmap:
+      - "  éâ à çêëèïî   "
+      - " ّْô¤ـûùءآأؤ£إئا"
+      - "بةتثجحخدذرزسشص«»"
+      - "░▒▓│┤╡╢╖╕╣║╗╝╜╛┐"
+      - "└┴┬├─┼╞╟╚╔╩╦╠═╬╧"
+      - "╨╤╥╙╘╒╓╫╪┘┌█▄▌▐▀"
+      - "ضطظعغفµقكلمنهوىي"
+      - "≡ًٌٍَُِ≈°∙·√ⁿ²■\u00A0"
+  cp737:
+    name: CP737 - OEM Greek
+    iconv: CP737
+    ruby: IBM737
+  cp747:
+    name: CP747 Unknown
+  cp772:
+    name: CP772 - OEM Lithuanian LST 1284:1993
+    charmap:
+      - "АБВГДЕЖЗИЙКЛМНОП"
+      - "РСТУФХЦЧШЩЪЫЬЭЮЯ"
+      - "абвгдежзийклмноп"
+      - "░▒▓│┤ĄČĘĖ╣║╗╝ĮŠ┐"
+      - "└┴┬├─┼ŲŪ╚╔╩╦╠═╬Ž"
+      - "ąčęėįšųūž┘┌█▄▌▐▀"
+      - "рстуфхцчшщъыьэюя"
+      - "Ёё≥≤„“÷≈°∙·√ⁿ²■\u00A0"
+  cp774:
+    name: CP774 - OEM Lithuanian 1283:1993
+    charmap:
+      - "ÇüéâäàåçêëèïîìÄÅ"
+      - "ÉæÆôöòûùÿÖÜ¢£¥₧ƒ"
+      - "áíóúñÑªº¿⌐¬½¼¡«»"
+      - "░▒▓│┤ĄČĘĖ╣║╗╝ĮŠ┐"
+      - "└┴┬├─┼ŲŪ╚╔╩╦╠═╬Ž"
+      - "ąčęėįšųūž┘┌█▄▌▐▀"
+      - "αβΓπΣσµτΦΘΩδ∞φε⋂"
+      - "≡±≥≤„“÷≈°∙˙√ⁿ²■\u00A0"
+  cp775:
+    name: CP775 - OEM Baltic
+    iconv: CP775
+    ruby: IBM775
+  cp850:
+    name: CP850 - OEM Multilingual
+    iconv: CP850
+    ruby: IBM850
+  cp851:
+    name: CP851 - OEM Greek
+    notes: Not used, due to inconsistencies between implementations.
+  cp852:
+    name: CP852 - OEM Central European
+    iconv: CP852
+    ruby: IBM852
+  cp853:
+    name: CP853 - OEM Turkish, Maltese, Esperanto
+  cp855:
+    name: CP855 - OEM Cyrillic
+    iconv: CP855
+    ruby: IBM855
+  cp857:
+    name: CP857 - OEM Turkish
+    iconv: CP857
+    ruby: IBM857
+  cp858:
+    name: CP858 - OEM Western European
+    charmap:
+      - 'ÇüéâäàåçêëèïîìÄÅ'
+      - 'ÉæÆôöòûùÿÖÜø£Ø×ƒ'
+      - 'áíóúñÑªº¿®¬½¼¡«»'
+      - '░▒▓│┤ÁÂÀ©╣║╗╝¢¥┐'
+      - '└┴┬├─┼ãÃ╚╔╩╦╠═╬¤'
+      - 'ðÐÊËÈ€ÍÎÏ┘┌█▄¦Ì▀'
+      - 'ÓßÔÒõÕµþÞÚÛÙýÝ¯´'
+      - "\u00AD±‗¾¶§÷¸°¨·¹³²■\u00A0"
+  cp860:
+    name: CP860 - OEM Portuguese
+    iconv: CP860
+    ruby: IBM860
+  cp861:
+    name: CP861 - OEM Icelandic
+    iconv: CP861
+    ruby: IBM861
+  cp862:
+    name: CP862 - OEM Hebrew
+    iconv: CP862
+    ruby: DOS-862
+  cp863:
+    name: CP863 - OEM French Canadian
+    iconv: CP863
+    ruby: IBM863
+  cp864:
+    name: CP864 - OEM Arabic
+    iconv: CP864
+  cp865:
+    name: CP865 - OEM Nordic
+    iconv: CP865
+    ruby: IBM865
+  cp866:
+    name: CP866 - OEM Russian
+    iconv: CP866
+    ruby: CP866
+  cp869:
+    name: CP869 - OEM Modern Greek
+    iconv: CP869
+    ruby: IBM869
+  cp874:
+    name: CP874 - ANSI/OEM Thai
+    iconv: CP874
+    ruby: WINDOWS-874
+  cp928:
+    name: CP928 - Unknown
+  cp932:
+    name: CP932 - Japanese (Shift-JIS)
+    cjk: true
+    iconv: CP932
+    ruby: CP932
+  katakana:
+    name: Katakana
+    charmap:
+      - "▁▂▃▄▅▆▇█▏▎▍▌▋▊▉┼"
+      - "┴┬┤├¯─│▕┌┐└┘╭╮╰╯"
+      - " ｡｢｣､･ｦｧｨｩｪｫｬｭｮｯ"
+      - "ｰｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿ"
+      - "ﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏ"
+      - "ﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝﾞﾟ"
+      - "═╞╪╡◢◣◥◤♠♥♦♣●○╱╲"
+      - "╳円年月日時分秒〒市区町村人▓\u00A0"
+  cp936:
+    name: CP936 - Simplified Chinese (GBK)
+    cjk: true
+    ruby: GBK
+    iconv: CP936
+  cp949:
+    name: CP949 - Korean (UHC)
+    cjk: true
+    ruby: CP949
+    iconv: CP949
+  cp950:
+    name: CP950 - Traditional Chinese (Big5)
+    cjk: true
+    ruby: CP950
+    iconv: CP950
+  cp1001:
+    name: CP1001 - Unimplemented Star-specific
+  cp1098:
+    name: CP1098 - 8-bit ASCII Farsi
+    charmap:
+      - "\u0020\u0020\u060C\u061B\u061F\u064B\uFE81\uFE82\uF8FA\uFE8D\uFE8E\uF8FB\uFE80\uFE83\uFE84\uF8F9"
+      - "\uFE85\uFE8B\uFE8F\uFE91\uFB56\uFB58\uFE95\uFE97\uFE99\uFE9B\uFE9D\uFE9F\uFB7A\uFB7C\u00D7\uFEA1"
+      - "\uFEA3\uFEA5\uFEA7\uFEA9\uFEAB\uFEAD\uFEAF\uFB8A\uFEB1\uFEB3\uFEB5\uFEB7\uFEB9\uFEBB\u00AB\u00BB"
+      - "\u2591\u2592\u2593\u2502\u2524\uFEBD\uFEBF\uFEC1\uFEC3\u2563\u2551\u2557\u255D\u00A4\uFEC5\u2510"
+      - "\u2514\u2534\u252C\u251C\u2500\u253C\uFEC7\uFEC9\u255A\u2554\u2569\u2566\u2560\u2550\u256C\u0020"
+      - "\uFECA\uFECB\uFECC\uFECD\uFECE\uFECF\uFED0\uFED1\uFED3\u2518\u250C\u2588\u2584\uFED5\uFED7\u2580"
+      - "\uFB8E\uFEDB\uFB92\uFB94\uFEDD\uFEDF\uFEE1\uFEE3\uFEE5\uFEE7\uFEED\uFEE9\uFEEB\uFEEC\uFBA4\uFBFC"
+      - "\u00AD\uFBFD\uFBFE\u0640\u06F0\u06F1\u06F2\u06F3\u06F4\u06F5\u06F6\u06F7\u06F8\u06F9\u25A0\u00A0"
+  cp1125:
+    name: CP1125 - Cyrillic, Ukrainian without Euro
+    iconv: CP1125
+  cp1250:
+    name: CP1250 - Windows Central Europe
+    iconv: CP1250
+    ruby: WINDOWS-1250
+  cp1251:
+    name: CP1251 - Windows Cyrillic
+    iconv: CP1251
+    ruby: WINDOWS-1251
+  cp1252:
+    name: CP1252 - Windows Western
+    iconv: CP1252
+    ruby: WINDOWS-1252
+  cp1253:
+    name: CP1253 - Windows Greek
+    iconv: CP1253
+    ruby: WINDOWS-1253
+  cp1254:
+    name: CP1254 - Windows Turkish
+    iconv: CP1254
+    ruby: WINDOWS-1254
+  cp1255:
+    name: CP1255 - Windows Hebrew
+    iconv: CP1255
+    ruby: WINDOWS-1255
+  cp1256:
+    name: CP1256 - Windows Arabic
+    iconv: CP1256
+    ruby: WINDOWS-1256
+  cp1257:
+    name: CP1257 - Windows Baltic
+    iconv: CP1257
+    ruby: WINDOWS-1257
+  cp1258:
+    name: CP1258 - Windows Vietnamese
+    iconv: CP1258
+  cp2001:
+    name: CP2001 - Unimplemented Star-specific
+  cp3001:
+    name: CP3001 - Unimplemented Star-specific
+  cp3002:
+    name: CP3002 - Unimplemented Star-specific
+  cp3011:
+    name: CP3011 - Latvian
+    charmap:
+      - ÇüéâäàåçêëèïîìÄÅ
+      - ÉæÆôöòûùÿÖÜ¢£¥₧ƒ
+      - áíóúñÑªº¿⌐¬½¼¡«»
+      - "░▒▓│┤Ā╢ņ╕╣║╗╝╜╛┐"
+      - "└┴┬├─┼ā╟╚╔╩╦╠═╬╧"
+      - Š╤čČ╘╒ģĪī┘┌█▄ūŪ▀
+      - αßΓπΣσµτΦΘΩδ∞φε∩
+      - "ĒēĢķĶļĻžŽ∙·√Ņš■\u00A0"
+  cp3012:
+    name: CP3012 - Cyrillic
+    charmap:
+      - "АБВГДЕЖЗИЙКЛМНОП"
+      - "РСТУФХЦЧШЩЪЫЬЭЮЯ"
+      - "абвгдежзийклмноп"
+      - "░▒▓│┤Ā╢ņ╕╣║╗╝Ō╛┐"
+      - "└┴┬├─┼ā╟╚╔╩╦╠═╬╧"
+      - "Š╤čČ╘╒ģĪī┘┌█▄ūŪ▀"
+      - "рстуфхцчшщъыьэюя"
+      - "ĒēĢķĶļĻžŽ∙·√Ņš■\u00A0"
+  cp3021:
+    name: CP3021 - Unimplemented Star-specific
+  cp3041:
+    name: CP3041 - Unimplemented Star-specific
+  cp3840:
+    name: CP3840 - Unimplemented Star-specific
+  cp3841:
+    name: CP3841 - Unimplemented Star-specific
+  cp3843:
+    name: CP3843 - Unimplemented Star-specific
+  cp3844:
+    name: CP3844 - Unimplemented Star-specific
+  cp3845:
+    name: CP3845 - Unimplemented Star-specific
+  cp3846:
+    name: CP3846 - Unimplemented Star-specific
+  cp3847:
+    name: CP3847 - Unimplemented Star-specific
+  cp3848:
+    name: CP3848 - Unimplemented Star-specific
+  iso8859_1:
+    name: ISO 8859-1 - Latin 1
+    iconv: ISO-8859-1
+    ruby: ISO-8859-1
+  iso8859_2:
+    name: ISO 8859-2 - Central European
+    iconv: ISO-8859-2
+    ruby: ISO-8859-2
+  iso8859_3:
+    name: ISO 8859-3 - Latin 3
+    iconv: ISO-8859-3
+    ruby: ISO-8859-3
+  iso8859_4:
+    name: ISO 8859-4 - Baltic
+    iconv: ISO-8859-4
+    ruby: ISO-8859-4
+  iso8859_5:
+    name: ISO 8859-5 - Cyrillic
+    iconv: ISO-8859-5
+    ruby: ISO-8859-5
+  iso8859_6:
+    name: ISO 8859-6 - Arabic
+    iconv: ISO-8859-6
+    ruby: ISO-8859-6
+  iso8859_7:
+    name: ISO 8859-7 - Greek
+    iconv: ISO-8859-7
+    ruby: ISO-8859-7
+  iso8859_8:
+    name: ISO 8859-8 - Hebrew
+    iconv: ISO-8859-8
+    ruby: ISO-8859-8
+  iso8859_9:
+    name: ISO 8859-9 - Turkish
+    iconv: ISO-8859-9
+    ruby: ISO-8859-9
+  iso8859_13:
+    name: ISO 8859-13 - Estonian
+    iconv: ISO-8859-13
+    ruby: ISO-8859-13
+  iso8859_15:
+    name: ISO 8859-15 - Latin 9
+    iconv: ISO-8859-15
+    ruby: ISO-8859-15
+  rk1048:
+    name: RK1048 - Kazakh
+    iconv: RK1048
+  tcvn3_1:
+    name: TCVN-3 - Vietnamese
+    charmap:
+      - "                "
+      - "                "
+      - "        ăâêôơưđ "
+      - "     àảãáạ ằẳẵắ "
+      - "      ặầẩẫấậè ẻẽ"
+      - "éẹềểễếệìỉ   ĩíịò"
+      - " ỏõóọồổỗốộờởỡớợù"
+      - " ủũúụừửữứựỳỷỹýỵ\u00A0"
+  tcvn3_2:
+    name: TCVN-3 - Vietnamese (Uppercase)
+    charmap:
+      - "                "
+      - "                "
+      - " ĂÂ    Ð  ÊÔƠƯ  "
+      - "     ÀẢÃÁẠ ẰẲẴẮ "
+      - "      ẶẦẨẪẤẬÈ ẺẼ"
+      - "ÉẸỀỂỄẾỆÌỈ   ĨÍỊÒ"
+      - " ỎÕÓỌỒỔỖỐỘỜỞỠỚỢÙ"
+      - " ỦŨÚỤỪỬỮỨỰỲỶỸÝỴ\u00A0"
+  oxhoo_european:
+    name: Oxhoo-specific European
+    charmap:
+      - "ÇüéâäàåçêëèïîìÄÅ"
+      - "ÉæÆôöòûùÿÖÜñÑªº¿"
+      - "áíóú¢£¥₧ƒ¡ÃãÕõØø"
+      - "·¨°`´½¼×÷≤≥«»≠√¯"
+      - "⌠⌡∞∇↵↑↓→←┌┐└┘•®©"
+      - "™†§¶ΓΔΘΛΞΠΣΤΦΨΩα"
+      - "ßγδεζηθικλμνξπρσ"
+      - "τυχψω▼▶◀␍↤␊⇥∏━ⓈⓅ"
+  shift_jis:
+    name: Shift-JIS - Japanese
+    cjk: true
+    ruby: Shift_JIS
+    iconv: Shift_JIS
+  gb18030:
+    name: GB18030 - Simplified Chinese
+    cjk: true
+    ruby: GB18030
+    iconv: GB18030
+  big5:
+    name: Big5 - Traditional Chinese
+    cjk: true
+    ruby: Big5
+    iconv: Big5
+  ksc5601:
+    name: KS C 5601 - Korean (EUC-KR)
+    cjk: true
+    ruby: EUC-KR
+    iconv: EUC-KR
+  utf8:
+    name: UTF-8
+    iconv: UTF-8
+    ruby: UTF-8
+  unknown:
+    name: Unknown
+    notes: Code page that has not yet been identified.
+
+devices:
+  escpos_generic:
+    format: escpos
+    codepages:
+      '0': cp437
+    colors:
+      '0': black
+    features:
+      barcode_a: false
+      barcode_b: false
+      bit_image_column: false
+      bit_image_raster: true
+      graphics: false
+      high_density: true
+      paper_full_cut: false
+      paper_partial_cut: false
+      pdf417_code: false
+      pulse_bel: false
+      pulse_standard: true
+      qr_code: false
+      star_commands: false
+    fonts:
+      '0':
+        columns: 42
+        name: Font A
+      '1':
+        columns: 56
+        name: Font B
+    mar_charset: 12
+    media:
+      width:
+        mm: unknown
+        pixels: unknown
+    name: Generic (ESC/POS)
+    notes: 'A profile for use in printers with unknown or poor compatibility. This profile indicates that a small number of features are supported, so that commands are not sent a printer that is unlikely to understand them.'
+    vendor: Generic
+
+  aures_ocd_300:
+    format: escpos
+    codepages:
+      '0': cp437
+      '1': katakana
+      '2': cp850
+      '3': cp860
+      '4': cp863
+      '5': cp865
+      '6': unknown
+      '7': unknown
+      '8': unknown
+      '9': cp852
+      '10': cp862
+      '11': cp866
+      '12': cp1251
+      '13': cp1254
+      '14': cp1255
+      '15': cp1257
+      '16': cp1252
+      '17': cp1253
+      '18': cp1250
+      '19': cp858
+      '20': unknown
+    colors:
+      '0': black
+    features:
+      barcode_a: false
+      barcode_b: false
+      bit_image_column: false
+      bit_image_raster: false
+      graphics: false
+      high_density: true
+      paper_full_cut: false
+      paper_partial_cut: false
+      pdf417_code: false
+      pulse_bel: false
+      pulse_standard: true
+      qr_code: false
+      star_commands: false
+    fonts:
+      '0':
+        columns: 20
+        name: Font A
+    mar_charset: 12
+    media:
+      width:
+        mm: unknown
+        pixels: unknown
+    name: Aures OCD-300 Customer Display
+    notes: 'This is a two-line, ESC/POS-aware customer display from Aures. It has some graphics support via vendor-provided tools, but is otherwise text-only.'
+    vendor: Aures
+
+  netum_nt_5890k:
+    format: escpos
+    codepages:
+      '0': cp437
+      '1': katakana
+      '2': cp850
+      '3': cp860
+      '4': cp863
+      '5': cp865
+      '6': unknown
+      '7': unknown
+      '8': unknown
+      '9': unknown
+      '10': unknown
+      '16': cp1252
+      '17': cp866
+      '18': cp852
+      '19': cp858
+      '20': unknown
+      '21': unknown
+      '22': unknown
+      '23': unknown
+      '24': cp747
+      '25': cp1257
+      '27': cp1258
+      '28': cp864
+      '31': unknown
+      '32': cp1255
+      '50': cp437
+      '52': cp437
+      '53': cp858
+      '54': cp852
+      '55': cp860
+      '56': cp861
+      '57': cp863
+      '58': cp865
+      '59': cp866
+      '60': cp855
+      '61': cp857
+      '62': cp862
+      '63': cp864
+      '64': cp737
+      '65': cp851
+      '66': cp869
+      '68': cp772
+      '69': cp774
+      '71': cp1252
+      '72': cp1250
+      '73': cp1251
+      '74': cp3840
+      '76': cp3843
+      '77': cp3844
+      '78': cp3845
+      '79': cp3846
+      '80': cp3847
+      '81': cp3848
+      '83': cp2001
+      '84': cp3001
+      '85': cp3002
+      '86': cp3011
+      '87': cp3012
+      '88': cp3021
+      '89': cp3041
+      '90': cp1253
+      '91': cp1254
+      '92': cp1256
+      '93': cp720
+      '94': cp1258
+      '95': cp775
+      '96': unknown
+      '255': unknown
+    colors:
+      '0': black
+    features:
+      barcode_a: false
+      barcode_b: false
+      bit_image_column: true
+      bit_image_raster: true
+      graphics: false
+      high_density: true
+      paper_full_cut: false
+      paper_partial_cut: false
+      pdf417_code: false
+      pulse_bel: false
+      pulse_standard: true
+      qr_code: false
+      star_commands: false
+    fonts:
+      '0':
+        columns: 32
+        name: Font A
+      '1':
+        columns: 42
+        name: Font B
+    mar_charset: 12
+    media:
+      width:
+        mm: 57.5
+        pixels: 384
+    name: Netum NT-5890K
+    notes: ''
+    vendor: Netum
+
+  epos_tep_200m:
+    format: escpos
+    codepages:
+      '0': cp437
+      '1': katakana
+      '2': cp850
+      '3': cp860
+      '4': cp863
+      '5': cp865
+      '6': unknown
+      '7': unknown
+      '8': unknown
+      '11': cp851
+      '12': cp853
+      '13': cp857
+      '14': cp737
+      '15': iso8859_7
+      '16': cp1252
+      '17': cp866
+      '18': cp852
+      '19': cp858
+      '20': unknown
+      '21': cp874
+      '22': unknown
+      '23': unknown
+      '24': unknown
+      '25': unknown
+      '26': unknown
+      '30': tcvn3_1
+      '31': tcvn3_2
+      '32': cp720
+      '33': cp775
+      '34': cp855
+      '35': cp861
+      '36': cp862
+      '37': cp864
+      '38': cp869
+      '39': iso8859_2
+      '40': iso8859_15
+      '41': cp1098
+      '42': cp774
+      '43': cp772
+      '44': cp1125
+      '45': cp1250
+      '46': cp1251
+      '47': cp1253
+      '48': cp1254
+      '49': cp1255
+      '50': cp1256
+      '51': cp1257
+      '52': cp1258
+      '53': rk1048
+      '66': unknown
+      '67': unknown
+      '68': unknown
+      '69': unknown
+      '70': unknown
+      '71': unknown
+      '72': unknown
+      '73': unknown
+      '74': unknown
+      '75': unknown
+      '82': unknown
+      '254': unknown
+      '255': unknown
+    colors:
+      '0': black
+    features:
+      barcode_a: true
+      barcode_b: true
+      bit_image_column: true
+      bit_image_raster: true
+      graphics: true
+      high_density: true
+      paper_full_cut: true
+      paper_partial_cut: true
+      pdf417_code: true
+      pulse_bel: false
+      pulse_standard: true
+      qr_code: true
+      star_commands: false
+    fonts:
+      '0':
+        columns: 42
+        name: Font A
+      '1':
+        columns: 56
+        name: Font B
+    media:
+      width:
+        mm: unknown
+        pixels: unknown
+    name: EPOS TEP200M Series
+    notes: ''
+    vendor: EPOS
+
+  epson_generic:
+    format: escpos
+    codepages:
+      '0': cp437
+      '1': katakana
+      '2': cp850
+      '3': cp860
+      '4': cp863
+      '5': cp865
+      '6': unknown
+      '7': unknown
+      '8': unknown
+      '11': cp851
+      '12': cp853
+      '13': cp857
+      '14': cp737
+      '15': iso8859_7
+      '16': cp1252
+      '17': cp866
+      '18': cp852
+      '19': cp858
+      '20': unknown
+      '21': cp874
+      '22': unknown
+      '23': unknown
+      '24': unknown
+      '25': unknown
+      '26': unknown
+      '30': tcvn3_1
+      '31': tcvn3_2
+      '32': cp720
+      '33': cp775
+      '34': cp855
+      '35': cp861
+      '36': cp862
+      '37': cp864
+      '38': cp869
+      '39': iso8859_2
+      '40': iso8859_15
+      '41': cp1098
+      '42': cp774
+      '43': cp772
+      '44': cp1125
+      '45': cp1250
+      '46': cp1251
+      '47': cp1253
+      '48': cp1254
+      '49': cp1255
+      '50': cp1256
+      '51': cp1257
+      '52': cp1258
+      '53': rk1048
+      '66': unknown
+      '67': unknown
+      '68': unknown
+      '69': unknown
+      '70': unknown
+      '71': unknown
+      '72': unknown
+      '73': unknown
+      '74': unknown
+      '75': unknown
+      '82': unknown
+      '254': unknown
+      '255': unknown
+    colors:
+      '0': black
+    features:
+      barcode_a: true
+      barcode_b: true
+      bit_image_column: true
+      bit_image_raster: true
+      graphics: true
+      high_density: true
+      paper_full_cut: true
+      paper_partial_cut: true
+      pdf417_code: true
+      pulse_bel: false
+      pulse_standard: true
+      qr_code: true
+      star_commands: false
+    fonts:
+      '0':
+        columns: 42
+        name: Font A
+      '1':
+        columns: 56
+        name: Font B
+    charsets: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    media:
+      width:
+        mm: unknown
+        pixels: unknown
+    name: Epson Generic
+    notes: 'Default ESC/POS profile, suitable for standards-compliant or Epson-branded printers. This profile allows the use of standard ESC/POS features, and can encode a variety of code pages.'
+    vendor: Generic
+
+  epson_tm_p80_48col:
+    format: escpos
+    codepages:
+      '0': cp437
+      '1': katakana
+      '2': cp850
+      '3': cp860
+      '4': cp863
+      '5': cp865
+      '6': unknown
+      '7': unknown
+      '8': unknown
+      '11': cp851
+      '12': cp853
+      '13': cp857
+      '14': cp737
+      '15': iso8859_7
+      '16': cp1252
+      '17': cp866
+      '18': cp852
+      '19': cp858
+      '20': unknown
+      '21': cp874
+      '22': unknown
+      '23': unknown
+      '24': unknown
+      '25': unknown
+      '26': unknown
+      '30': tcvn3_1
+      '31': tcvn3_2
+      '32': cp720
+      '33': cp775
+      '34': cp855
+      '35': cp861
+      '36': cp862
+      '37': cp864
+      '38': cp869
+      '39': iso8859_2
+      '40': iso8859_15
+      '41': cp1098
+      '42': cp774
+      '43': cp772
+      '44': cp1125
+      '45': cp1250
+      '46': cp1251
+      '47': cp1253
+      '48': cp1254
+      '49': cp1255
+      '50': cp1256
+      '51': cp1257
+      '52': cp1258
+      '53': rk1048
+      '66': unknown
+      '67': unknown
+      '68': unknown
+      '69': unknown
+      '70': unknown
+      '71': unknown
+      '72': unknown
+      '73': unknown
+      '74': unknown
+      '75': unknown
+      '82': unknown
+      '254': unknown
+      '255': unknown
+    colors:
+      '0': black
+    features:
+      barcode_a: true
+      barcode_b: true
+      bit_image_column: true
+      bit_image_raster: true
+      graphics: true
+      high_density: true
+      paper_full_cut: true
+      paper_partial_cut: true
+      pdf417_code: true
+      pulse_bel: false
+      pulse_standard: true
+      qr_code: true
+      star_commands: false
+    fonts:
+      '0':
+        columns: 42
+        name: Font A
+      '1':
+        columns: 56
+        name: Font B
+      '2':
+        columns: 24
+        name: Kanji
+    charsets: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+    media:
+      width:
+        mm: 72
+        pixels: 576
+    name: Epson TM-P80 (48-column mode)
+    notes: Portable printer (48-column mode)
+    vendor: Epson
+
+  epson_tm_p80_42col:
+    format: escpos
+    codepages:
+      '0': cp437
+      '1': katakana
+      '2': cp850
+      '3': cp860
+      '4': cp863
+      '5': cp865
+      '6': unknown
+      '7': unknown
+      '8': unknown
+      '11': cp851
+      '12': cp853
+      '13': cp857
+      '14': cp737
+      '15': iso8859_7
+      '16': cp1252
+      '17': cp866
+      '18': cp852
+      '19': cp858
+      '20': unknown
+      '21': cp874
+      '22': unknown
+      '23': unknown
+      '24': unknown
+      '25': unknown
+      '26': unknown
+      '30': tcvn3_1
+      '31': tcvn3_2
+      '32': cp720
+      '33': cp775
+      '34': cp855
+      '35': cp861
+      '36': cp862
+      '37': cp864
+      '38': cp869
+      '39': iso8859_2
+      '40': iso8859_15
+      '41': cp1098
+      '42': cp774
+      '43': cp772
+      '44': cp1125
+      '45': cp1250
+      '46': cp1251
+      '47': cp1253
+      '48': cp1254
+      '49': cp1255
+      '50': cp1256
+      '51': cp1257
+      '52': cp1258
+      '53': rk1048
+      '66': unknown
+      '67': unknown
+      '68': unknown
+      '69': unknown
+      '70': unknown
+      '71': unknown
+      '72': unknown
+      '73': unknown
+      '74': unknown
+      '75': unknown
+      '82': unknown
+      '254': unknown
+      '255': unknown
+    colors:
+      '0': black
+    features:
+      barcode_a: true
+      barcode_b: true
+      bit_image_column: true
+      bit_image_raster: true
+      graphics: true
+      high_density: true
+      paper_full_cut: true
+      paper_partial_cut: true
+      pdf417_code: true
+      pulse_bel: false
+      pulse_standard: true
+      qr_code: true
+      star_commands: false
+    fonts:
+      '0':
+        columns: 42
+        name: Font A
+      '1':
+        columns: 60
+        name: Font B
+      '2':
+        columns: 21
+        name: Kanji
+    charsets: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+    media:
+      width:
+        mm: 63.6
+        pixels: 546
+    name: Epson TM-P80 (42 column mode)
+    notes: Portable printer (42-column mode)
+    vendor: Epson
+
+  epson_tm_t88ii:
+    format: escpos
+    codepages:
+      '0': cp437
+      '1': katakana
+      '2': cp850
+      '3': cp860
+      '4': cp863
+      '5': cp865
+      '19': cp858
+      '255': unknown
+    colors:
+      '0': black
+    features:
+      barcode_a: true
+      barcode_b: true
+      bit_image_column: true
+      bit_image_raster: true
+      graphics: true
+      high_density: true
+      paper_full_cut: true
+      paper_partial_cut: true
+      pdf417_code: true
+      pulse_bel: false
+      pulse_standard: true
+      qr_code: true
+      star_commands: false
+    fonts:
+      '0':
+        columns: 42
+        name: Font A
+      '1':
+        columns: 56
+        name: Font B
+    charsets: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    media:
+      width:
+        mm: unknown
+        pixels: unknown
+    name: Epson TM-T88II
+    notes: 'Epson TM-T88II profile. This printer is discontinued by the Vendor, and has similar feature support to the TM-T88III. The code page mapping is documented in the "TM-T88II/T88III Technical Reference Guide".'
+    vendor: Epson
+
+  epson_tm_t88iii:
+    format: escpos
+    codepages:
+      '0': cp437
+      '1': katakana
+      '2': cp850
+      '3': cp860
+      '4': cp863
+      '5': cp865
+      '16': cp1252
+      '17': cp866
+      '18': cp862
+      '19': cp858
+      '255': unknown
+    colors:
+      '0': black
+    features:
+      barcode_a: true
+      barcode_b: true
+      bit_image_column: true
+      bit_image_raster: true
+      graphics: true
+      high_density: true
+      paper_full_cut: true
+      paper_partial_cut: true
+      pdf417_code: true
+      pulse_bel: false
+      pulse_standard: true
+      qr_code: true
+      star_commands: false
+    fonts:
+      '0':
+        columns: 42
+        name: Font A
+      '1':
+        columns: 56
+        name: Font B
+    charsets: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    media:
+      width:
+        mm: unknown
+        pixels: unknown
+    name: Epson TM-T88III
+    notes: 'Epson TM-T88III profile. This printer has similar feature support to the TM-T88II. The code page mapping is documented in the "TM-T88II/T88III Technical Reference Guide".'
+    vendor: Epson
+
+  epson_tm_t88iv:
+    format: escpos
+    codepages:
+      '0': cp437
+      '1': katakana
+      '2': cp850
+      '3': cp860
+      '4': cp863
+      '5': cp865
+      '16': cp1252
+      '17': cp866
+      '18': cp852
+      '19': cp858
+      '255': unknown
+    colors:
+      '0': black
+    features:
+      barcode_a: true
+      barcode_b: true
+      bit_image_column: true
+      bit_image_raster: true
+      graphics: true
+      high_density: true
+      paper_full_cut: true
+      paper_partial_cut: true
+      pdf417_code: true
+      pulse_bel: false
+      pulse_standard: true
+      qr_code: true
+      star_commands: false
+    fonts:
+      '0':
+        columns: 42
+        name: Font A
+      '1':
+        columns: 56
+        name: Font B
+    charsets: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+    media:
+      width:
+        mm: unknown
+        pixels: unknown
+    name: Epson TM-T88IV
+    notes: 'Epson TM-T88IV profile'
+    vendor: Epson
+
+  epson_tm_t88iv_sa:
+    format: escpos
+    codepages:
+      '0': cp437
+      '20': unknown
+      '21': cp874
+      '26': unknown
+      '30': tcvn3_1
+      '31': tcvn3_2
+    colors:
+      '0': black
+    features:
+      barcode_a: true
+      barcode_b: true
+      bit_image_column: true
+      bit_image_raster: true
+      graphics: true
+      high_density: true
+      paper_full_cut: true
+      paper_partial_cut: true
+      pdf417_code: true
+      pulse_bel: false
+      pulse_standard: true
+      qr_code: true
+      star_commands: false
+    fonts:
+      '0':
+        columns: 42
+        name: Font A
+      '1':
+        columns: 56
+        name: Font B
+    charsets: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+    media:
+      width:
+        mm: unknown
+        pixels: unknown
+    name: Epson TM-T88IV (South Asia model)
+    notes: 'Epson TM-T88IV profile (South Asia model)'
+    vendor: Epson
+
+  epson_tm_t88v:
+    format: escpos
+    codepages:
+      '0': cp437
+      '1': katakana
+      '2': cp850
+      '3': cp860
+      '4': cp863
+      '5': cp865
+      '16': cp1252
+      '17': cp866
+      '18': cp852
+      '19': cp858
+      '255': unknown
+    colors:
+      '0': black
+    features:
+      barcode_a: true
+      barcode_b: true
+      bit_image_column: true
+      bit_image_raster: true
+      graphics: true
+      high_density: true
+      paper_full_cut: true
+      paper_partial_cut: true
+      pdf417_code: true
+      pulse_bel: false
+      pulse_standard: true
+      qr_code: true
+      star_commands: false
+    fonts:
+      '0':
+        columns: 42
+        name: Font A
+      '1':
+        columns: 56
+        name: Font B
+    charsets: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+    media:
+      width:
+        mm: unknown
+        pixels: unknown
+    name: Epson TM-T88V
+    notes: 'Epson TM-T88V profile'
+    vendor: Epson
+
+  epson_tm_t88v_sa:
+    format: escpos
+    codepages:
+      '0': cp437
+      '20': unknown
+      '21': cp874
+      '26': unknown
+      '30': tcvn3_1
+      '31': tcvn3_2
+    colors:
+      '0': black
+    features:
+      barcode_a: true
+      barcode_b: true
+      bit_image_column: true
+      bit_image_raster: true
+      graphics: true
+      high_density: true
+      paper_full_cut: true
+      paper_partial_cut: true
+      pdf417_code: true
+      pulse_bel: false
+      pulse_standard: true
+      qr_code: true
+      star_commands: false
+    fonts:
+      '0':
+        columns: 42
+        name: Font A
+      '1':
+        columns: 56
+        name: Font B
+    charsets: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+    media:
+      width:
+        mm: unknown
+        pixels: unknown
+    name: Epson TM-T88V (South Asia model)
+    notes: 'Epson TM-T88V profile (South Asian model)'
+    vendor: Epson
+
+  epson_tm_u220:
+    format: escpos
+    codepages:
+      '0': cp437
+    colors:
+      '0': black
+      '1': alternate
+    features:
+      barcode_a: false
+      barcode_b: false
+      bit_image_column: true
+      bit_image_raster: false
+      graphics: false
+      high_density: false
+      paper_full_cut: false
+      paper_partial_cut: false
+      pdf417_code: false
+      pulse_bel: false
+      pulse_standard: true
+      qr_code: false
+      star_commands: false
+    fonts:
+      '0':
+        columns: 42
+        name: Font A
+      '1':
+        columns: 56
+        name: Font B
+    charsets: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    media:
+      width:
+        mm: 80
+        pixels: unknown
+    name: Epson TM-U220
+    notes: Two-color impact printer with 80mm output
+    vendor: Epson
+
+  pbm_p822d:
+    format: escpos
+    codepages:
+      '0': cp437
+      '1': katakana
+      '2': cp850
+      '3': cp860
+      '4': cp863
+      '5': cp865
+      '6': unknown
+      '7': unknown
+      '8': unknown
+      '9': unknown
+      '10': unknown
+      '16': cp1252
+      '17': cp866
+      '18': cp852
+      '19': cp858
+      '20': unknown
+      '21': unknown
+      '22': unknown
+      '23': unknown
+      '24': cp747
+      '25': cp1257
+      '27': unknown
+      '28': cp864
+      '29': cp1001
+      '30': unknown
+      '31': unknown
+      '32': cp1255
+      '33': cp720
+      '34': cp1256
+      '35': cp1257
+      '50': cp437
+      '51': unknown
+      '52': cp437
+      '53': cp858
+      '54': cp852
+      '55': cp860
+      '56': cp861
+      '57': cp863
+      '58': cp865
+      '59': cp866
+      '60': cp855
+      '61': cp857
+      '62': cp862
+      '63': cp864
+      '64': cp737
+      '65': cp851
+      '66': cp869
+      '67': cp928
+      '68': cp772
+      '69': cp774
+      '70': cp874
+      '71': cp1252
+      '72': cp1250
+      '73': cp1251
+      '74': cp3840
+      '75': cp3841
+      '76': cp3843
+      '77': cp3844
+      '78': cp3845
+      '79': cp3846
+      '80': cp3847
+      '81': cp3848
+      '82': cp1001
+      '83': cp2001
+      '84': cp3001
+      '85': cp3002
+      '86': cp3011
+      '87': cp3012
+      '88': cp3021
+      '89': cp3041
+      '255': unknown
+    colors:
+      '0': black
+    features:
+      barcode_a: true
+      barcode_b: true
+      bit_image_column: true
+      bit_image_raster: true
+      graphics: false
+      high_density: true
+      paper_full_cut: true
+      paper_partial_cut: true
+      pdf417_code: true
+      pulse_bel: false
+      pulse_standard: true
+      qr_code: true
+      star_commands: false
+    fonts:
+      '0':
+        columns: 42
+        name: Font A
+      '1':
+        columns: 56
+        name: Font B
+    charsets: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    media:
+      width:
+        mm: unknown
+        pixels: unknown
+    name: PBM P822D
+    notes: ''
+    vendor: PBM
+
+  star_generic: &STAR_GENERIC
+    format: starprnt
+    bluetooth_address: BT:Star Micronics
+    colors:
+      '0': black
+    features:
+      barcode_a: true
+      barcode_b: true
+      bit_image_column: true
+      bit_image_raster: true
+      graphics: true
+      high_density: true
+      paper_full_cut: true
+      paper_partial_cut: true
+      pdf417_code: true
+      pulse_bel: false
+      pulse_standard: true
+      qr_code: true
+      star_commands: true
+    fonts:
+      '0':
+        columns: 42
+        name: Font A
+      '1':
+        columns: 56
+        name: Font B
+    media:
+      width:
+        mm: unknown
+        pixels: unknown
+    name: Star Generic
+    notes: Star Generic
+    vendor: Star Micronics
+
+  star_escpos:
+    <<: *STAR_GENERIC
+    name: Star ESC/POS
+    format: escpos_star
+    notes: Generic Star Micronics printer with ESC/POS emulation enabled
+
+  star_sp2000:
+    <<: *STAR_GENERIC
+    name: Star SP2000 Series
+    notes: Star SP2000 impact printer series
+
+  star_tsp100:
+    format: stargraphic
+    bluetooth_address: BT:TSP100
+    colors:
+      '0': black
+    features:
+      barcode_a: false
+      barcode_b: false
+      bit_image_column: false
+      bit_image_raster: true
+      graphics: true
+      high_density: true
+      paper_full_cut: true
+      paper_partial_cut: true
+      pdf417_code: false
+      pulse_bel: false
+      pulse_standard: false
+      qr_code: false
+      star_commands: false
+    media:
+      width:
+        mm: 80
+        pixels: 576
+    name: Star TSP100 Series
+    notes: Star TSP100 thermal printer series. Uses raster graphics.
+    vendor: Star Micronics
+
+  star_tsp600:
+    <<: *STAR_GENERIC
+    name: Star TSP600 Series
+    notes: Star TSP600 thermal printer series
+
+  star_tup500:
+    <<: *STAR_GENERIC
+    name: Star TUP500 Series
+    notes: Star TUP500 thermal printer series
+
+  zjiang_pos_5890:
+    format: escpos
+    codepages:
+      '0': cp437
+      '1': katakana
+      '2': cp850
+      '3': cp860
+      '4': cp863
+      '5': cp865
+      '6': unknown
+      '7': unknown
+      '8': unknown
+      '9': unknown
+      '10': unknown
+      '16': cp1252
+      '17': cp866
+      '18': cp852
+      '19': cp858
+      '20': unknown
+      '21': unknown
+      '22': unknown
+      '23': unknown
+      '24': cp747
+      '25': cp1257
+      '27': cp1258
+      '28': cp864
+      '31': unknown
+      '32': cp1255
+      '50': cp437
+      '52': cp437
+      '53': cp858
+      '54': cp852
+      '55': cp860
+      '56': cp861
+      '57': cp863
+      '58': cp865
+      '59': cp866
+      '60': cp855
+      '61': cp857
+      '62': cp862
+      '63': cp864
+      '64': cp737
+      '65': cp851
+      '66': cp869
+      '68': cp772
+      '69': cp774
+      '71': cp1252
+      '72': cp1250
+      '73': cp1251
+      '74': cp3840
+      '76': cp3843
+      '77': cp3844
+      '78': cp3845
+      '79': cp3846
+      '80': cp3847
+      '81': cp3848
+      '83': cp2001
+      '84': cp3001
+      '85': cp3002
+      '86': cp3011
+      '87': cp3012
+      '88': cp3021
+      '89': cp3041
+      '90': cp1253
+      '91': cp1254
+      '92': cp1256
+      '93': cp720
+      '94': cp1258
+      '95': cp775
+      '96': unknown
+      '255': unknown
+    colors:
+      '0': black
+    features:
+      barcode_a: false
+      barcode_b: false
+      bit_image_column: false
+      bit_image_raster: true
+      graphics: false
+      high_density: true
+      paper_full_cut: false
+      paper_partial_cut: false
+      pdf417_code: false
+      pulse_bel: false
+      pulse_standard: true
+      qr_code: false
+      star_commands: false
+    fonts:
+      '0':
+        columns: 32
+        name: Font A
+      '1':
+        columns: 42
+        name: Font B
+    charsets: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    media:
+      width:
+        mm: 57.5
+        pixels: 384
+    name: Zjiang POS5890 Series
+    notes: 'POS-5890 thermal printer series, also marketed under various other names.'
+    vendor: Zjiang

@@ -1,0 +1,4 @@
+coverage
+*.gem
+Gemfile.lock
+tmp/*
