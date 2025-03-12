@@ -16,7 +16,7 @@ RSpec.describe ::Thermal::Db::Loader do
 
     it 'when does not exist' do
       obj = described_class.device('xxx')
-      expect(obj).to eq nil
+      expect(obj).to be_nil
       expect(described_class.instance_variable_get(:@cache)['devices']).to eq('xxx' => nil)
     end
   end
@@ -30,7 +30,7 @@ RSpec.describe ::Thermal::Db::Loader do
 
     it 'when does not exist' do
       obj = described_class.encoding('xxx')
-      expect(obj).to eq nil
+      expect(obj).to be_nil
       expect(described_class.instance_variable_get(:@cache)['encodings']).to eq('xxx' => nil)
     end
   end
@@ -44,7 +44,7 @@ RSpec.describe ::Thermal::Db::Loader do
 
     it 'when does not exist' do
       obj = described_class.charset('100')
-      expect(obj).to eq nil
+      expect(obj).to be_nil
       expect(described_class.instance_variable_get(:@cache)['charsets']).to eq(100 => nil)
     end
   end
@@ -58,7 +58,7 @@ RSpec.describe ::Thermal::Db::Loader do
 
     it 'when does not exist' do
       obj = described_class.cjk_encoding('en')
-      expect(obj).to eq nil
+      expect(obj).to be_nil
       expect(described_class.instance_variable_get(:@cache)['cjk_encodings']).to eq('en' => nil)
     end
   end

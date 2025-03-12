@@ -22,7 +22,7 @@ RSpec.describe ::Thermal::Db do
       expect(described_class.find_cjk_encoding(:TW)).to eq 'big5'
       expect(described_class.find_cjk_encoding('HK')).to eq 'big5'
       expect(described_class.find_cjk_encoding('MO')).to eq 'big5'
-      expect(described_class.find_cjk_encoding('US')).to eq nil
+      expect(described_class.find_cjk_encoding('US')).to be_nil
     end
   end
 end

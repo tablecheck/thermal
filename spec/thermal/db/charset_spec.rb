@@ -28,7 +28,7 @@ RSpec.describe ::Thermal::Db::Charset do
       }
     end
 
-    it 'should match' do
+    it 'matches' do
       ::Thermal::Db::Data.data['charsets'].select { |_, v| v['charmap'] }.each do |chr, cfg|
         obj = described_class.new(chr, *cfg['charmap'])
         # puts chr

@@ -12,7 +12,7 @@ RSpec.describe ::Thermal do
   end
 
   let(:stub_rails) do
-    rails = double('Rails')
+    rails = class_double(Rails)
     allow(rails).to receive(:root).and_return(Pathname.new('/a/b/c'))
     stub_const('Rails', rails)
   end
@@ -23,8 +23,10 @@ RSpec.describe ::Thermal do
     end
 
     context 'when .tmp_dir set' do
-      before { stub_rails }
-      before { described_class.tmp_dir = '/h/i/j' }
+      before do
+        stub_rails
+        described_class.tmp_dir = '/h/i/j'
+      end
 
       it do
         dir = '/h/i/j'
@@ -65,9 +67,9 @@ RSpec.describe ::Thermal do
       end
     end
 
-    context 'when relative path' do
+    context 'when absolute path' do
       it do
-        expect { described_class.tmp_dir = '/foo/bar' }.to_not raise_error
+        described_class.tmp_dir = '/foo/bar'
         expect(described_class.tmp_dir).to eq(Pathname.new('/foo/bar'))
       end
     end
@@ -81,7 +83,7 @@ RSpec.describe ::Thermal do
     end
 
     context 'when Rails not defined' do
-      it { expect(described_class.app_root).to eq nil }
+      it { expect(described_class.app_root).to be_nil }
     end
   end
 end

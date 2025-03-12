@@ -1,6 +1,6 @@
 inherit_from: .rubocop_todo.yml
 
-require:
+plugins:
   - rubocop-performance
   - rubocop-rake
   - rubocop-rspec
@@ -12,6 +12,9 @@ AllCops:
 
 Gemspec/RequiredRubyVersion:
   Enabled: false
+
+Layout/IndentationWidth:
+  AllowedPatterns: ['^\s*(?:module|class)']
 
 Layout/LineLength:
   Enabled: false
@@ -31,13 +34,25 @@ Metrics/MethodLength:
 Metrics/PerceivedComplexity:
   Enabled: false
 
+RSpec/ContextWording:
+  Enabled: false
+
 RSpec/ExampleLength:
   Enabled: false
+
+RSpec/MessageSpies:
+  EnforcedStyle: receive
 
 RSpec/MultipleExpectations:
   Enabled: false
 
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+
 RSpec/NestedGroups:
+  Enabled: false
+
+RSpec/StubbedMock:
   Enabled: false
 
 Style/Alias:
@@ -46,6 +61,9 @@ Style/Alias:
 Style/Documentation:
   Exclude:
     - 'spec/**/*'
+
+Style/DoubleNegation:
+  Enabled: false
 
 Style/ModuleFunction:
   EnforcedStyle: extend_self

@@ -46,7 +46,7 @@ RSpec.describe ::Thermal::Db::CjkEncoding do
     context locale.to_s do
       let(:locale) { locale }
 
-      it 'should do mapping' do
+      it 'does mapping' do
         mapping.each do |char, bytes|
           # puts char
           # puts bytes.inspect

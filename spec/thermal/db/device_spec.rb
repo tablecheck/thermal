@@ -15,7 +15,7 @@ RSpec.describe ::Thermal::Db::Device do
       expect(obj.charsets.keys).to eq (0..17).to_a
       expect(obj.charsets.values.map(&:key)).to eq (0..17).to_a
 
-      expect(obj.find_encoding('A'.ord)).to eq nil
+      expect(obj.find_encoding('A'.ord)).to be_nil
       expect(obj.find_encoding('♠'.ord)).to eq [:codepage, 1]
       expect(obj.find_encoding('₧'.ord)).to eq [:codepage, 0]
       expect(obj.find_encoding('Д'.ord)).to eq [:codepage, 17]

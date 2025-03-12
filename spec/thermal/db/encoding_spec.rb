@@ -60,12 +60,12 @@ RSpec.describe ::Thermal::Db::Encoding do
       # rubocop:enable Naming/VariableNumber
     end
 
-    it 'should have all encodings' do
+    it 'has all encodings' do
       available = ::Thermal::Db::Data.data['encodings'].select { |_, v| v['charmap'] }.keys.sort
       expect(available).to eq expected.keys.map(&:to_s).sort
     end
 
-    it 'should match' do
+    it 'matches' do
       ::Thermal::Db::Data.data['encodings'].select { |_, v| v['charmap'] }.each do |enc, cfg|
         obj = described_class.new(enc, cfg['charmap'])
         # puts enc
