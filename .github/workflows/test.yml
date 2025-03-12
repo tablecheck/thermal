@@ -41,6 +41,8 @@ jobs:
           - macos-latest
           - windows-latest
         exclude:
+          - ruby: jruby-9.4
+            os: windows-latest
           - ruby: truffleruby
             os: windows-latest
 

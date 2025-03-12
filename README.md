@@ -3,7 +3,7 @@
 Thermal printer support for Ruby. Used to print receipts, chits, tickets, labels, etc.
 
 [![Gem Version](https://badge.fury.io/rb/thermal.svg)](https://badge.fury.io/rb/thermal)
-[![CI](https://github.com/tablecheck/thermal/actions/workflows/ci.yml/badge.svg)](https://github.com/tablecheck/thermal/actions/workflows/ci.yml)
+[![Test](https://github.com/tablecheck/thermal/actions/workflows/test.yml/badge.svg)](https://github.com/tablecheck/thermal/actions/workflows/test.yml)
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop/rubocop)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
