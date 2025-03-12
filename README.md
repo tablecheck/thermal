@@ -2,6 +2,11 @@
 
 Thermal printer support for Ruby. Used to print receipts, chits, tickets, labels, etc.
 
+[![Gem Version](https://badge.fury.io/rb/thermal.svg)](https://badge.fury.io/rb/thermal)
+[![CI](https://github.com/tablecheck/thermal/actions/workflows/ci.yml/badge.svg)](https://github.com/tablecheck/thermal/actions/workflows/ci.yml)
+[![Ruby Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop/rubocop)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+
 ### Features
 
 - Simple and opinionated API. **It just works™**
@@ -159,11 +164,10 @@ To add support for additional Thermal printers.
 
 ### Maintainers
 
-HTMLDiff is maintained and battle-tested by the team at [TableCheck](https://www.tablecheck.com/en/join/)
-based in Tokyo, Japan. We use Thermal to help our restaurant users print
-chits, receipts, and QR code printouts to help
-visualize the edit history of their customer and reservation data. If you're seeking
-your next career adventure, [we're hiring](https://careers.tablecheck.com/)!
+Thermal is maintained and battle-tested by the team at [TableCheck](https://www.tablecheck.com/en/join/)
+based in Tokyo, Japan. We use Thermal to help our restaurant users print chits, receipts, and
+QR codes to serve their guests' reservations. If you are seeking your next career adventure,
+[we're hiring](https://careers.tablecheck.com/)!
 
 ### Data Sources
 
