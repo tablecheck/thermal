@@ -1,9 +1,13 @@
 # frozen_string_literal: true
 
+require 'bundler/setup'
 require_relative '../lib/thermal'
 
 RSpec.configure do |config|
+  config.disable_monkey_patching!
+
   config.expect_with :rspec do |expectations|
+    expectations.syntax = :expect
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
 
@@ -12,4 +16,5 @@ RSpec.configure do |config|
   end
 
   config.shared_context_metadata_behavior = :apply_to_host_groups
+  config.order = :random
 end

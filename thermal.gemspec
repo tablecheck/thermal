@@ -1,21 +1,19 @@
 # frozen_string_literal: true
 
-lib = File.expand_path('lib', __dir__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'thermal/version'
+require_relative 'lib/thermal/version'
 
-Gem::Specification.new do |s|
-  s.name          = 'thermal'
-  s.version       = Thermal::VERSION
-  s.authors       = ['Johnny Shields']
-  s.email         = ['dev@tablecheck.com']
-  s.description   = 'Thermal Printer API adapter'
-  s.summary       = 'Receipt printing support for Ruby'
+Gem::Specification.new do |spec|
+  spec.name          = 'thermal'
+  spec.version       = Thermal::VERSION
+  spec.authors       = ['Johnny Shields']
+  spec.email         = ['dev@tablecheck.com']
+  spec.summary       = 'Thermal printer support for Ruby'
+  spec.description   = 'Thermal printer support for Ruby. Used to print receipts, chits, tickets, labels, etc.'
 
-  s.files         = Dir['{lib,data,spec}/**/*'] + %w[README.md COPYRIGHT]
-  s.require_paths = ['lib']
+  spec.files         = Dir['{lib,data}/**/*'] + %w[README.md LICENSE]
+  spec.require_paths = ['lib']
 
-  s.add_dependency 'unf'
-  s.add_dependency 'escpos'
-  s.add_dependency 'escpos-image'
+  spec.add_dependency 'unf'
+  spec.add_dependency 'escpos'
+  spec.add_dependency 'escpos-image'
 end

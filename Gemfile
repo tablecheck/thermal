@@ -4,8 +4,14 @@ source 'https://rubygems.org'
 
 gemspec
 
-gem 'rspec'
-gem 'simplecov'
 gem 'iconv'
 gem 'mini_magick'
 gem 'rqrcode'
+
+gem 'rake'
+gem 'rspec'
+gem 'simplecov'
+gem 'rubocop'
+gem 'rubocop-performance'
+gem 'rubocop-rake'
+gem 'rubocop-rspec'

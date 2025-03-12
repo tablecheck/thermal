@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require 'concurrent'
 require 'forwardable'
 require 'yaml'
 require 'fileutils'

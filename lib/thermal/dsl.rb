@@ -5,8 +5,8 @@ module Thermal
     def self.included(base)
       base.class_eval do
 
-        def thermal_print(**, &block)
-          printer.print(**, &block)
+        def thermal_print(**kwargs, &block)
+          printer.print(**kwargs, &block)
         end
 
         private

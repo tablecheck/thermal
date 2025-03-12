@@ -48,15 +48,12 @@ module Db
     private
 
     def cached(key, value)
-      key = key.to_s
-      return cache.dig(key, value) if cache[key]&.key?(value)
-      cache[key] ||= {}
-      cache[key][value] = yield
+      cache[key.to_s][value] ||= yield
     end
 
     def cache
       MUTEX.synchronize do
-        @cache ||= Concurrent::Hash.new
+        @cache ||= Hash.new { |h, k| h[k] = {} }
       end
     end
 
