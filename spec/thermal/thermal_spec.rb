@@ -12,7 +12,7 @@ RSpec.describe Thermal do
   end
 
   let(:stub_rails) do
-    rails = class_double(Rails)
+    rails = class_double('Rails')
     allow(rails).to receive(:root).and_return(Pathname.new('/a/b/c'))
     stub_const('Rails', rails)
   end
