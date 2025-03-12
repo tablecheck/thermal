@@ -1,16 +1,27 @@
-require File.expand_path('../lib/thermal/version', __FILE__)
+# frozen_string_literal: true
 
-Gem::Specification.new do |gem|
-  gem.name          = 'thermal'
-  gem.version       = Thermal::VERSION
-  gem.summary       = 'Convert basic HTML into thermal printer escape codes.'
-  gem.description   = gem.description
-  gem.author        = 'Tyler Kellen'
-  gem.email         = 'tyler@sleekcode.net'
-  gem.homepage      = 'https://github.com/tkellen/ruby-thermal/'
-  gem.files         = `git ls-files`.split("\n")
-  gem.require_paths = ['lib']
-  gem.add_development_dependency('rspec')
-  gem.add_development_dependency('pry')
-  gem.add_development_dependency('hirb')
+lib = File.expand_path('lib', __dir__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'thermal/version'
+
+Gem::Specification.new do |s|
+  s.name          = 'thermal'
+  s.version       = Thermal::VERSION
+  s.authors       = ['Johnny Shields']
+  s.email         = ['dev@tablecheck.com']
+  s.description   = 'Thermal Printer API adapter'
+  s.summary       = 'Receipt printing support for Ruby'
+
+  s.files         = Dir['{lib,data,spec}/**/*'] + %w[README.md COPYRIGHT]
+  s.require_paths = ['lib']
+
+  s.add_dependency 'unf'
+  s.add_dependency 'escpos'
+  s.add_dependency 'escpos-image'
+
+  s.add_development_dependency 'rspec'
+  s.add_development_dependency 'simplecov'
+  s.add_development_dependency 'iconv'
+  s.add_development_dependency 'mini_magick'
+  s.add_development_dependency 'rqrcode'
 end
