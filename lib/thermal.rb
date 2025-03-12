@@ -4,7 +4,6 @@ require 'forwardable'
 require 'yaml'
 require 'fileutils'
 require 'pathname'
-require 'unf'
 
 require 'escpos' # TODO: get rid of this
 
@@ -51,6 +50,7 @@ module Thermal
 
     def tmp_path(filename)
       raise 'Must set Thermal.tmp_dir' unless tmp_dir || app_root
+
       path = tmp_dir ? Pathname.new(tmp_dir) : app_root.join(DEFAULT_TMP_DIR)
       path = path.join(filename)
       FileUtils.mkdir_p(File.dirname(path))
@@ -65,6 +65,7 @@ module Thermal
 
       value = Pathname.new(value)
       raise ArgumentError.new('Thermal.tmp_dir must be an absolute path') unless value.absolute?
+
       @tmp_dir = value
     end
 

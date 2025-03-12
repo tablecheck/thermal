@@ -27,6 +27,7 @@ module Thermal
 
     def find_cjk_encoding(locale)
       return unless locale
+
       case locale.to_s.downcase.tr('_', '-')
       when /\Aja(-.+)?\z/, 'jp'
         'shift_jis'

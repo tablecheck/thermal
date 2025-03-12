@@ -13,7 +13,8 @@ Gem::Specification.new do |spec|
   spec.files         = Dir['{lib,data}/**/*'] + %w[README.md LICENSE]
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'unf'
   spec.add_dependency 'escpos'
   spec.add_dependency 'escpos-image'
+
+  spec.metadata['rubygems_mfa_required'] = 'true'
 end
