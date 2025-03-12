@@ -18,11 +18,9 @@ Thermal printer support for Ruby. Used to print receipts, chits, tickets, labels
 
 ### Optional Features
 
-- **HTML-to-text support**
-  - Requires [nokogiri](https://nokogiri.org/) gem.
 - **QR code generation**
   - Requires [rqrcode](https://github.com/whomwah/rqrcode) gem.
-- Support for **Stargraphic pixel-only printer** with system-side font rasterization.
+- Support for **Stargraphic (raster-only format)** using system-side font rendering.
   - See requirements below.
 
 ### Supported Output Formats
@@ -36,6 +34,8 @@ Thermal printer support for Ruby. Used to print receipts, chits, tickets, labels
 
 ### Non-Features & Limitations
 
+- **HTML-to-text support** (planned, not yet released)
+  - Requires [nokogiri](https://nokogiri.org/) gem.
 - **No support for wire protocols** such as USB, Bluetooth, etc. This gem is intended
   to run on a server; it only generates  the instructions/bytes to be sent to the client
 - (browser, iOS, etc.) which should then send it to the end device.
