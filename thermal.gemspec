@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.name          = 'thermal'
   spec.version       = Thermal::VERSION
   spec.authors       = ['Johnny Shields']
-  spec.email         = ['dev@tablecheck.com']
+  spec.email         = ['johnny.shields@gmail.com']
   spec.summary       = 'Thermal printer support for Ruby'
   spec.description   = 'Thermal printer support for Ruby. Used to print receipts, chits, tickets, labels, etc.'
 

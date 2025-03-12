@@ -18,7 +18,7 @@ Thermal printer support for Ruby. Used to print receipts, chits, tickets, labels
 - 🏭 Supports a broad range of **makers and models** (Epson, Star Micronics, Brother, PBM, Zijiang, etc.)
 - 🌐 Automatic **multi-lingual** codepage support, including support for **CJK extended character sets**.
 - 📝 **Simple DSL** for rich text output formatting.
-- 🛠️ **Graceful degradation** of features based on printer capabilities.
+- 🦋 **Graceful degradation** of features based on printer capabilities.
 
 ### 🔌 Optional Features
 
@@ -120,7 +120,7 @@ end
 - Add details of how to implement a thermal printer config.
 
 
-### 🚢 Integrating Thermal into your App
+### 🛠️ Advanced Considerations
 
 #### 🧵 Thread-Safety
 
@@ -130,8 +130,8 @@ end
 
 ### 📝 TODOs
 
-Required before releasing.
-- [ ] Yaml safe load
+#### ✅ Required before 1.0.0 release
+
 - [ ] Add task to import config from escpos-printer-db
 - [ ] Rename CjkEncoding to RubyEncoding, rename CharmapEncoding, CharsetEncoding, also add IconvEncoding
 - [ ] Encoding classes themselves should validate missing char (move from Escpos::Buffer class)
@@ -148,7 +148,8 @@ Required before releasing.
 - [ ] StarGraphic needs multiple message buffering. ???
 - [ ] Add QR to DSL
 
-Nice to haves ✨:
+#### ✨ Nice to haves
+
 - [ ] font support. col_width should be dynamic in the printer (currently depends on font 0)
 - [ ] Copy "Available methods" from https://github.com/escpos/escpos-php
 - [ ] Add HTML command in addition to text. Should be done as an AST (HtmlAst) like [[:text, 'ddd'], [:underline, 2, [[:text, 'foo']]]]
@@ -159,14 +160,14 @@ Nice to haves ✨:
 - [ ] Allow pass-in of charset object.
 - [ ] Indian ISCII encoding for Escpos (separate gem?).
 
-# 👥 Contributing
+# 🙏 Contributing
 
 To add support for additional Thermal printers.
 - escpos-printer-db
 - Add new code in `lib/thermal/printer/escpos.rb`
 - Add new code in `lib/thermal/printer/starprnt.rb`
 
-# 🙏 Acknowledgements
+# 💖 Acknowledgements
 
 ### 👨‍💻 Maintainers
 
