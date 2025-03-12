@@ -2,7 +2,7 @@
 
 require_relative '../spec_helper'
 
-RSpec.describe ::Thermal::Profile do
+RSpec.describe Thermal::Profile do
   let(:cjk) { nil }
   let(:obj) { described_class.new(device, cjk_encoding: cjk) }
 
@@ -55,7 +55,7 @@ RSpec.describe ::Thermal::Profile do
         expect(obj.codepages.values.map(&:key)).to eq %w[cp437 katakana cp850 cp860 cp863 cp865 cp1252 cp866 cp852 cp858]
         expect(obj.charsets.keys).to eq (0..17).to_a
         expect(obj.charsets.values.map(&:key)).to eq (0..17).to_a
-        expect(obj.cjk_encoding).to be_a ::Thermal::Db::CjkEncoding
+        expect(obj.cjk_encoding).to be_a Thermal::Db::CjkEncoding
         expect(obj.cjk_encoding.instance_variable_get(:@ruby)).to eq 'Shift_JIS'
 
         expect(obj.find_encoding('A'.ord)).to be_nil

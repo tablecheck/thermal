@@ -68,5 +68,8 @@ Style/DoubleNegation:
 Style/ModuleFunction:
   EnforcedStyle: extend_self
 
+Style/NumericPredicate:
+  EnforcedStyle: comparison
+
 Style/RaiseArgs:
   EnforcedStyle: compact

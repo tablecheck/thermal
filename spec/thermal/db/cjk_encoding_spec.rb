@@ -2,9 +2,9 @@
 
 require_relative '../../spec_helper'
 
-RSpec.describe ::Thermal::Db::CjkEncoding do
-  let(:cjk) { ::Thermal::Db.find_cjk_encoding(locale) }
-  let(:encoding) { ::Thermal::Db::Data.data.dig('encodings', cjk) }
+RSpec.describe Thermal::Db::CjkEncoding do
+  let(:cjk) { Thermal::Db.find_cjk_encoding(locale) }
+  let(:encoding) { Thermal::Db::Data.data.dig('encodings', cjk) }
   let(:obj) { described_class.new(locale, encoding['ruby']) }
 
   cases = {

@@ -2,13 +2,13 @@
 
 require_relative '../spec_helper'
 
-RSpec.describe ::Thermal::Dsl do
+RSpec.describe Thermal::Dsl do
   let(:dummy_base) do
     Class.new do
-      include ::Thermal::Dsl
+      include Thermal::Dsl
 
       def printer
-        @printer ||= ::Thermal::Printer.new(:epson_tm_t88iv)
+        @printer ||= Thermal::Printer.new(:epson_tm_t88iv)
       end
 
       def data
@@ -193,7 +193,7 @@ RSpec.describe ::Thermal::Dsl do
       let(:dummy) do
         Class.new(dummy_base) do
           def printer
-            @printer ||= ::Thermal::Printer.new(:epson_tm_t88iv, cjk_encoding: 'shift_jis')
+            @printer ||= Thermal::Printer.new(:epson_tm_t88iv, cjk_encoding: 'shift_jis')
           end
 
           def dsl

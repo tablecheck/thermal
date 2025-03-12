@@ -2,7 +2,7 @@
 
 require_relative '../spec_helper'
 
-RSpec.describe ::Thermal do
+RSpec.describe Thermal do
   before do
     hide_const('Rails') if defined?(Rails)
   end

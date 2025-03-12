@@ -2,9 +2,9 @@
 
 require_relative '../../spec_helper'
 
-RSpec.describe ::Thermal::Escpos::Buffer do
+RSpec.describe Thermal::Escpos::Buffer do
   let(:cjk) { nil }
-  let(:profile) { ::Thermal::Profile.new(device, cjk_encoding: cjk) }
+  let(:profile) { Thermal::Profile.new(device, cjk_encoding: cjk) }
   let(:obj) { described_class.new(profile) }
   let(:init) do
     [27, 64] # HW init

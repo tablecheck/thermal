@@ -2,7 +2,7 @@
 
 require_relative '../spec_helper'
 
-RSpec.describe ::Thermal::Db do
+RSpec.describe Thermal::Db do
   describe '.find_cjk_encoding' do
     it do
       expect(described_class.find_cjk_encoding(:ja)).to eq 'shift_jis'

@@ -2,7 +2,7 @@
 
 require_relative '../../spec_helper'
 
-RSpec.describe ::Thermal::Db::Loader do
+RSpec.describe Thermal::Db::Loader do
   before do
     described_class.reload
   end
@@ -10,7 +10,7 @@ RSpec.describe ::Thermal::Db::Loader do
   describe '.device' do
     it 'when exists' do
       obj = described_class.device('epson_tm_t88ii')
-      expect(obj).to be_a ::Thermal::Db::Device
+      expect(obj).to be_a Thermal::Db::Device
       expect(described_class.instance_variable_get(:@cache)['devices']).to eq('epson_tm_t88ii' => obj)
     end
 
@@ -24,7 +24,7 @@ RSpec.describe ::Thermal::Db::Loader do
   describe '.encoding' do
     it 'when exists' do
       obj = described_class.encoding('cp860')
-      expect(obj).to be_a ::Thermal::Db::Encoding
+      expect(obj).to be_a Thermal::Db::Encoding
       expect(described_class.instance_variable_get(:@cache)['encodings']).to eq('cp860' => obj)
     end
 
@@ -38,7 +38,7 @@ RSpec.describe ::Thermal::Db::Loader do
   describe '.charset' do
     it 'when exists' do
       obj = described_class.charset('4')
-      expect(obj).to be_a ::Thermal::Db::Charset
+      expect(obj).to be_a Thermal::Db::Charset
       expect(described_class.instance_variable_get(:@cache)['charsets']).to eq(4 => obj)
     end
 
@@ -52,7 +52,7 @@ RSpec.describe ::Thermal::Db::Loader do
   describe '.cjk_encoding' do
     it 'when exists' do
       obj = described_class.cjk_encoding('big5')
-      expect(obj).to be_a ::Thermal::Db::CjkEncoding
+      expect(obj).to be_a Thermal::Db::CjkEncoding
       expect(described_class.instance_variable_get(:@cache)['cjk_encodings']).to eq('big5' => obj)
     end
 

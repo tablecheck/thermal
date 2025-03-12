@@ -2,7 +2,7 @@
 
 require_relative '../../spec_helper'
 
-RSpec.describe ::Thermal::Stargraphic::Writer do
+RSpec.describe Thermal::Stargraphic::Writer do
   it do
     expect(described_class.format).to eq 'stargraphic'
   end

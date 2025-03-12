@@ -197,21 +197,19 @@ module Stargraphic
     class << self
       # Persists font as singleton
       def font
-        @font ||= begin
-          if OS.windows?
-            'Sans'
-          else
-            font_list = begin
-              `fc-list`
-            rescue StandardError
-              ''
-            end
-            case font_list
-            when /NotoSans/ then 'NotoSans'
-            else 'Sans'
-            end
-          end
-        end
+        @font ||= if OS.windows?
+                    'Sans'
+                  else
+                    font_list = begin
+                      `fc-list`
+                    rescue StandardError
+                      ''
+                    end
+                    case font_list
+                    when /NotoSans/ then 'NotoSans'
+                    else 'Sans'
+                    end
+                  end
       end
     end
 
@@ -262,7 +260,7 @@ module Stargraphic
       qr_cols = qr_lines.first.size
       margin = (cols - qr_cols) / 2.0
       zero = [0]
-      output = qr_lines.map { |line| (zero * margin.floor + line + zero * margin.ceil) * 8 }.flatten.pack('C*')
+      output = qr_lines.map { |line| ((zero * margin.floor) + line + (zero * margin.ceil)) * 8 }.flatten.pack('C*')
       [width, height, output]
     end
 
@@ -279,7 +277,7 @@ module Stargraphic
       pixels = hr_pixels(style)
       output = +''
       (0...LINE_HEIGHT).each do |row|
-        output << (row.in?(pixels) ? "\xFF" : "\x00") * byte_width
+        output << ((row.in?(pixels) ? "\xFF" : "\x00") * byte_width)
       end
       output.freeze
       [width, LINE_HEIGHT, output]

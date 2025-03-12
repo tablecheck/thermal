@@ -2,7 +2,7 @@
 
 require_relative '../../spec_helper'
 
-RSpec.describe ::Thermal::EscposStar::Buffer do
+RSpec.describe Thermal::EscposStar::Buffer do
   let(:obj) { described_class.new }
 
   describe '#write_text' do

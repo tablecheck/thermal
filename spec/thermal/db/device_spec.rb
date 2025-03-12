@@ -2,8 +2,8 @@
 
 require_relative '../../spec_helper'
 
-RSpec.describe ::Thermal::Db::Device do
-  let(:cfg) { ::Thermal::Db::Data.data.dig('devices', device) }
+RSpec.describe Thermal::Db::Device do
+  let(:cfg) { Thermal::Db::Data.data.dig('devices', device) }
   let(:obj) { described_class.new(device, cfg) }
 
   context 'epson_tm_t88v' do
