@@ -3,7 +3,7 @@
 module Thermal
 module Db
   class Encoding
-    RANGE = 128..255
+    RANGE = (128..255).freeze
 
     attr_reader :key, :charmap
 

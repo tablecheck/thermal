@@ -71,7 +71,7 @@ RSpec.describe ::Thermal::Escpos::Buffer do
     end
 
     it 'encodes a string' do
-      obj.write_text("Hi$ ♠ 円年〒月 Foo あ気₩观 Test €円$年月 ♠ €!")
+      obj.write_text('Hi$ ♠ 円年〒月 Foo あ気₩观 Test €円$年月 ♠ €!')
       # puts seq.inspect
       # puts obj.to_a.inspect
       expect(obj.to_a).to eq seq
@@ -131,7 +131,7 @@ RSpec.describe ::Thermal::Escpos::Buffer do
       end
 
       it 'encodes a string' do
-        obj.write_text("Hi ♠ 円年〒月 Foo あ気₩观 Test 円$年月 ♠ €!")
+        obj.write_text('Hi ♠ 円年〒月 Foo あ気₩观 Test 円$年月 ♠ €!')
         # puts seq.inspect
         # puts obj.to_a.inspect
         expect(obj.to_a).to eq seq
@@ -182,7 +182,7 @@ RSpec.describe ::Thermal::Escpos::Buffer do
         end
 
         it 'encodes a string' do
-          obj.write_text("Hi ♠ 円年〒月 Foo あ気₩观 Test 円$年月 ♠ €!", no_cjk: true)
+          obj.write_text('Hi ♠ 円年〒月 Foo あ気₩观 Test 円$年月 ♠ €!', no_cjk: true)
           # puts seq.inspect
           # puts obj.to_a.inspect
           expect(obj.to_a).to eq seq
@@ -251,7 +251,7 @@ RSpec.describe ::Thermal::Escpos::Buffer do
       end
 
       it 'encodes a string' do
-        obj.write_text("Há감사위원은 Hi 円年〒♥月这是원장의₩观 Testｱ 年$年这月 ♠")
+        obj.write_text('Há감사위원은 Hi 円年〒♥月这是원장의₩观 Testｱ 年$年这月 ♠')
         # puts seq.inspect
         # puts obj.to_a.inspect
         expect(obj.to_a).to eq seq
@@ -306,7 +306,7 @@ RSpec.describe ::Thermal::Escpos::Buffer do
         end
 
         it 'encodes a string' do
-          obj.write_text("Há감사위원은 Hi 円年〒♥月这是원장의₩观 Testｱ 年$年这月 ♠", no_cjk: true)
+          obj.write_text('Há감사위원은 Hi 円年〒♥月这是원장의₩观 Testｱ 年$年这月 ♠', no_cjk: true)
           # puts seq.inspect
           # puts obj.to_a.inspect
           expect(obj.to_a).to eq seq
@@ -367,7 +367,7 @@ RSpec.describe ::Thermal::Escpos::Buffer do
       end
 
       it 'encodes a string' do
-        obj.write_text("这是什么？ Hi 円年〒月 한₩观 Testｱ 年$年这月 ♠")
+        obj.write_text('这是什么？ Hi 円年〒月 한₩观 Testｱ 年$年这月 ♠')
         # puts seq.inspect
         # puts obj.to_a.inspect
         expect(obj.to_a).to eq seq
@@ -416,7 +416,7 @@ RSpec.describe ::Thermal::Escpos::Buffer do
         end
 
         it 'encodes a string' do
-          obj.write_text("这是什么？ Hi 円年〒月 한₩观 Testｱ 年$年这月 ♠", no_cjk: true)
+          obj.write_text('这是什么？ Hi 円年〒月 한₩观 Testｱ 年$年这月 ♠', no_cjk: true)
           # puts seq.inspect
           # puts obj.to_a.inspect
           expect(obj.to_a).to eq seq
@@ -479,7 +479,7 @@ RSpec.describe ::Thermal::Escpos::Buffer do
       end
 
       it 'encodes a string' do
-        obj.write_text("Hi$ 繁體字 円年〒月这是원장의₩观 Testｱ 年$年这♠")
+        obj.write_text('Hi$ 繁體字 円年〒月这是원장의₩观 Testｱ 年$年这♠')
         # puts seq.inspect
         # puts obj.to_a.inspect
         expect(obj.to_a).to eq seq
@@ -528,7 +528,7 @@ RSpec.describe ::Thermal::Escpos::Buffer do
         end
 
         it 'encodes a string' do
-          obj.write_text("Hi$ 繁體字 円年〒月这是원장의₩观 Testｱ 年$年这♠", no_cjk: true)
+          obj.write_text('Hi$ 繁體字 円年〒月这是원장의₩观 Testｱ 年$年这♠', no_cjk: true)
           # puts seq.inspect
           # puts obj.to_a.inspect
           expect(obj.to_a).to eq seq

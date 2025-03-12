@@ -7,7 +7,7 @@ RSpec.describe ::Thermal::EscposStar::Buffer do
 
   describe '#write_text' do
     let(:text) do
-      "Hi$ ♠ 円年月 Foo あ気₩观 Test €円$年月 ♠ €!"
+      'Hi$ ♠ 円年月 Foo あ気₩观 Test €円$年月 ♠ €!'
     end
 
     let(:init) do

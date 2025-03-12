@@ -20,12 +20,12 @@ RSpec.describe Thermal::EscposStar::Writer do
   describe '#text' do
     it 'feeds by default' do
       expect(writer).to receive(:feed)
-      writer.text("Hello")
+      writer.text('Hello')
     end
 
     it 'does not feed when feed: false' do
       expect(writer).not_to receive(:feed)
-      writer.text("Hello", feed: false)
+      writer.text('Hello', feed: false)
     end
   end
 

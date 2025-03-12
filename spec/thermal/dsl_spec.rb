@@ -202,7 +202,7 @@ RSpec.describe ::Thermal::Dsl do
               text('Chez Louis')
               hr
             end
-            text("顧客: Test 様")
+            text('顧客: Test 様')
             hr
           end
         end

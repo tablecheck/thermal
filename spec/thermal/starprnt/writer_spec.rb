@@ -19,17 +19,17 @@ RSpec.describe Thermal::Starprnt::Writer do
   describe '#text' do
     it 'appends text to the buffer' do
       expect(buffer).to receive(:print).with(append: "Hello\n")
-      writer.text("Hello")
+      writer.text('Hello')
     end
 
     it 'does not append newline when feed: false' do
-      expect(buffer).to receive(:print).with(append: "Hello")
-      writer.text("Hello", feed: false)
+      expect(buffer).to receive(:print).with(append: 'Hello')
+      writer.text('Hello', feed: false)
     end
 
     it 'normalizes text' do
-      expect(Thermal::Util).to receive(:normalize_utf8).with("Hello", replace: nil).and_return("Hello")
-      writer.text("Hello")
+      expect(Thermal::Util).to receive(:normalize_utf8).with('Hello', replace: nil).and_return('Hello')
+      writer.text('Hello')
     end
   end
 

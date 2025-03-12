@@ -29,7 +29,7 @@ module Db
     end
 
     def open_yaml(str)
-      YAML.load(str, aliases: true)
+      YAML.safe_load(str, aliases: true)
     end
 
     def remove

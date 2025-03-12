@@ -20,28 +20,28 @@ RSpec.describe Thermal::Escpos::Writer do
 
   describe '#text' do
     it 'writes text to the buffer' do
-      expect(buffer).to receive(:write_text).with("Hello", replace: nil, no_cjk: false)
-      writer.text("Hello")
+      expect(buffer).to receive(:write_text).with('Hello', replace: nil, no_cjk: false)
+      writer.text('Hello')
     end
 
     it 'accepts no_cjk option' do
-      expect(buffer).to receive(:write_text).with("Hello", replace: nil, no_cjk: true)
-      writer.text("Hello", no_cjk: true)
+      expect(buffer).to receive(:write_text).with('Hello', replace: nil, no_cjk: true)
+      writer.text('Hello', no_cjk: true)
     end
 
     it 'accepts replace option' do
-      expect(buffer).to receive(:write_text).with("Hello", replace: '_', no_cjk: false)
-      writer.text("Hello", replace: '_')
+      expect(buffer).to receive(:write_text).with('Hello', replace: '_', no_cjk: false)
+      writer.text('Hello', replace: '_')
     end
 
     it 'feeds by default' do
       expect(writer).to receive(:feed)
-      writer.text("Hello")
+      writer.text('Hello')
     end
 
     it 'does not feed when feed: false' do
       expect(writer).not_to receive(:feed)
-      writer.text("Hello", feed: false)
+      writer.text('Hello', feed: false)
     end
   end
 
