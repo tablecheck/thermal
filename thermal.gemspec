@@ -15,6 +15,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.required_ruby_version = '>= 3.0'
+  spec.add_dependency 'base64', '>= 0'
   spec.add_dependency 'escpos', '< 1.0.0'
   spec.add_dependency 'escpos-image', '< 1.0.0'
 
