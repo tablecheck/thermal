@@ -58,7 +58,6 @@ RSpec.describe ::Thermal do
   end
 
   describe '.tmp_dir=' do
-
     context 'when relative path' do
       it do
         msg = 'Thermal.tmp_dir must be an absolute path'
@@ -75,7 +74,6 @@ RSpec.describe ::Thermal do
   end
 
   describe '.app_root' do
-
     context 'when Rails defined' do
       before { stub_rails }
 

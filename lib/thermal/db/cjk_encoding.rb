@@ -23,6 +23,7 @@ module Db
 
     def char(u_char)
       return if u_char.ord <= 127
+
       char = u_char.encode(@ruby)
       char unless skip?(char)
     rescue EncodingError

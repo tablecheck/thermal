@@ -15,10 +15,12 @@ module Thermal
                         image
                         qr_code ].freeze
 
-    WRITERS = [ ::Thermal::Escpos::Writer,
-                ::Thermal::EscposStar::Writer,
-                ::Thermal::Stargraphic::Writer,
-                ::Thermal::Starprnt::Writer ].freeze
+    WRITERS = [
+      ::Thermal::Escpos::Writer,
+      ::Thermal::EscposStar::Writer,
+      ::Thermal::Stargraphic::Writer,
+      ::Thermal::Starprnt::Writer
+    ].freeze
 
     WRITER_MAP = ::Thermal::Util.index_by(WRITERS, &:format).freeze
 

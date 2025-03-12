@@ -5,7 +5,6 @@ module Stargraphic
   # TODO: This is not used yet.
   # It should be refactored as it doesn't transparently extend ByteBuffer
   class ChunkedByteBuffer
-
     def initialize(max_chunk_bytes)
       @max_chunk_bytes = max_chunk_bytes
       @byte_counter = 0

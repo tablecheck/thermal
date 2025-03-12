@@ -3,7 +3,6 @@
 require_relative '../../spec_helper'
 
 RSpec.describe ::Thermal::Db::Charset do
-
   describe 'all charsets' do
     let(:expected) do
       {
@@ -30,7 +29,7 @@ RSpec.describe ::Thermal::Db::Charset do
     end
 
     it 'should match' do
-      ::Thermal::Db::Data.data['charsets'].select {|_, v| v['charmap'] }.each do |chr, cfg|
+      ::Thermal::Db::Data.data['charsets'].select { |_, v| v['charmap'] }.each do |chr, cfg|
         obj = described_class.new(chr, *cfg['charmap'])
         # puts chr
         # puts obj.charmap.inspect

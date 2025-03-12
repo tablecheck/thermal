@@ -59,19 +59,19 @@ module Db
     def charsets
       @charsets ||= begin
         charsets = @data['charsets'] || ::Thermal::Db::DEFAULT_CHARSETS
-        ::Thermal::Util.index_with(charsets) {|i| ::Thermal::Db.charset(i) }.freeze
+        ::Thermal::Util.index_with(charsets) { |i| ::Thermal::Db.charset(i) }.freeze
       end
     end
 
     private
 
     def codepage_index
-      @codepage_index ||= codepages.map {|k, v| ::Thermal::Util.index_with(v.u_codepoints, k) }
+      @codepage_index ||= codepages.map { |k, v| ::Thermal::Util.index_with(v.u_codepoints, k) }
                                    .reverse.inject(&:merge).freeze
     end
 
     def charset_index
-      @charset_index ||= charsets.values.map! {|c| ::Thermal::Util.index_with(c.u_codepoints, c.key) }
+      @charset_index ||= charsets.values.map! { |c| ::Thermal::Util.index_with(c.u_codepoints, c.key) }
                                  .reverse.inject(&:merge).freeze
     end
   end

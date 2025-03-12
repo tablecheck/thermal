@@ -15,6 +15,7 @@ module Db
 
     def u_codepoints
       return @u_codepoints if defined?(@u_codepoints)
+
       @u_codepoints = charmap.each_codepoint.to_a
     end
 

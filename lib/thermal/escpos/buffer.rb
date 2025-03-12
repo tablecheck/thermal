@@ -2,7 +2,6 @@
 
 module Thermal
 module Escpos
-
   # Inspired by mike42/escpos-php
   # https://github.com/mike42/escpos-php/blob/development/src/Mike42/Escpos/PrintBuffers/EscposPrintBuffer.php
   class Buffer < ::Thermal::ByteBuffer
@@ -97,18 +96,21 @@ module Escpos
 
     def set_charset(charset) # rubocop:disable Naming/AccessorMethodName
       return if @charset == charset
+
       sequence([0x1b, 0x52] + [charset])
       @charset = charset
     end
 
     def reset_charset!(u_codepoint)
       return unless ::Thermal::Db::Charset::CODEPOINTS.include?(u_codepoint)
+
       set_charset(0)
     end
 
     def set_codepage(codepage) # rubocop:disable Naming/AccessorMethodName
       set_cjk(false)
       return if @codepage == codepage
+
       sequence(::Escpos::CP_SET + [codepage])
       @codepage = codepage
     end
@@ -119,12 +121,14 @@ module Escpos
 
     def set_cjk_on
       return if !cjk_supported? || @cjk
+
       sequence(cjk_on_command)
       @cjk = true
     end
 
     def set_cjk_off
       return if !cjk_supported? || !@cjk
+
       sequence(cjk_off_command)
       @cjk = false
     end

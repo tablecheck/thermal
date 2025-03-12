@@ -3,7 +3,6 @@
 module Thermal
 module Stargraphic
   class CappedByteBuffer < ByteBuffer
-
     def initialize(max_bytes)
       super()
       @max_bytes = max_bytes

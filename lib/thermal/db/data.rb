@@ -33,16 +33,19 @@ module Db
 
     def device(device)
       return unless device
+
       data.dig('devices', device.to_s)
     end
 
     def encoding(encoding)
       return unless encoding
+
       data.dig('encodings', encoding.to_s)
     end
 
     def charset(charset)
       return unless charset
+
       data.dig('charsets', 'escpos', charset.to_i)
     end
 
@@ -66,7 +69,7 @@ module Db
       data.dig('charsets', 'escpos').transform_keys!(&:to_i)
       device_int_keys = %w[codepages colors fonts]
       data['devices'].each_value do |d|
-        device_int_keys.each {|k| d[k]&.transform_keys!(&:to_i) }
+        device_int_keys.each { |k| d[k]&.transform_keys!(&:to_i) }
       end
     end
   end

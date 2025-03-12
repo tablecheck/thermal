@@ -2,7 +2,6 @@
 
 module Thermal
 module Db
-
   # The charset is different than the codepage. It controls usage of
   # specific ASCII-range code points such as dollar-sign ($).
   class Charset
@@ -17,6 +16,7 @@ module Db
 
     def u_codepoints
       return @u_codepoints if defined?(@u_codepoints)
+
       @u_codepoints = @charmap.each_codepoint.to_a
     end
 

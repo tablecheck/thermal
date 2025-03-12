@@ -3,7 +3,6 @@
 module Thermal
 module EscposStar
   class Writer < ::Thermal::Escpos::Writer
-
     def self.format
       'escpos_star'
     end

@@ -82,8 +82,9 @@ module Db
     orig2 = orig.deep_dup
     orig2['encodings'].each do |k, enc|
       next unless codepages[k.to_sym]
+
       enc['charmap'] = codepages[k.to_sym].scan(/.{16}/)
-      raise "Bad: #{k}" unless enc['charmap'].size == 8 && enc['charmap'].all? {|s| s.size == 16 }
+      raise "Bad: #{k}" unless enc['charmap'].size == 8 && enc['charmap'].all? { |s| s.size == 16 }
     end
 
     # codepages = {

@@ -121,6 +121,7 @@ module Stargraphic
       width, _, data = obj
       raise "Width #{width}px must be a multiple of 8" unless width % 8 == 0
       raise "Width #{width}px cannot be greater than #{@width}px" if width > @width
+
       byte_width = width / 8
       row_cmd = [98, byte_width, 0]
       data.each_chunk(byte_width) do |row|
@@ -257,11 +258,11 @@ module Stargraphic
       cols = width / 8
       qr_lines = ::RQRCode::QRCode.new(url).to_s(dark: 'x', light: ' ').split("\n")
       height = qr_lines.size * 8
-      qr_lines = qr_lines.map {|line| line.each_char.map {|d| d == 'x' ? 255 : 0 } }
+      qr_lines = qr_lines.map { |line| line.each_char.map { |d| d == 'x' ? 255 : 0 } }
       qr_cols = qr_lines.first.size
       margin = (cols - qr_cols) / 2.0
       zero = [0]
-      output = qr_lines.map {|line| (zero * margin.floor + line + zero * margin.ceil) * 8 }.flatten.pack('C*')
+      output = qr_lines.map { |line| (zero * margin.floor + line + zero * margin.ceil) * 8 }.flatten.pack('C*')
       [width, height, output]
     end
 

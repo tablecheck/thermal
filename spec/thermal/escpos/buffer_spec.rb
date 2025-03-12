@@ -486,7 +486,6 @@ RSpec.describe ::Thermal::Escpos::Buffer do
       end
 
       context 'no_cjk' do
-
         let(:seq) do
           [
             27, 64, # HW init

@@ -33,6 +33,7 @@ module Thermal
       alignment = alignment.downcase.to_sym if alignment.is_a?(String)
       alignment ||= :left
       raise "Invalid align #{alignment.inspect}" unless ALIGNMENTS.include?(alignment)
+
       write_style(align: alignment, &block)
     end
 
@@ -93,6 +94,7 @@ module Thermal
       write_bold!      unless @bold      == prev_bold
       write_underline! unless @underline == prev_underline
       return unless block_given?
+
       yield
       inner_align     = @align
       inner_bold      = @bold

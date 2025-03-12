@@ -31,6 +31,7 @@ module Thermal
 
     def cjk_encoding
       return @cjk_encoding if defined?(@cjk_encoding)
+
       @cjk_encoding = ::Thermal::Db.cjk_encoding(@cjk)
     end
 

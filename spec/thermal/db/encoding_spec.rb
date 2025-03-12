@@ -3,9 +3,7 @@
 require_relative '../../spec_helper'
 
 RSpec.describe ::Thermal::Db::Encoding do
-
   describe 'all encodings' do
-
     let(:expected) do
       # rubocop:disable Naming/VariableNumber
       {
@@ -63,12 +61,12 @@ RSpec.describe ::Thermal::Db::Encoding do
     end
 
     it 'should have all encodings' do
-      available = ::Thermal::Db::Data.data['encodings'].select {|_, v| v['charmap'] }.keys.sort
+      available = ::Thermal::Db::Data.data['encodings'].select { |_, v| v['charmap'] }.keys.sort
       expect(available).to eq expected.keys.map(&:to_s).sort
     end
 
     it 'should match' do
-      ::Thermal::Db::Data.data['encodings'].select {|_, v| v['charmap'] }.each do |enc, cfg|
+      ::Thermal::Db::Data.data['encodings'].select { |_, v| v['charmap'] }.each do |enc, cfg|
         obj = described_class.new(enc, cfg['charmap'])
         # puts enc
         # puts obj.charmap.inspect

@@ -3,7 +3,6 @@
 module Thermal
 module EscposStar
   class Buffer < ::Thermal::ByteBuffer
-
     def initialize
       super
       init_buffer!
@@ -24,8 +23,7 @@ module EscposStar
     end
 
     def set_cjk_off
-      sequence([ 0x1c, 0x2e,
-                 0x1c, 0x43, 0 ])
+      sequence([0x1c, 0x2e, 0x1c, 0x43, 0])
     end
 
     def set_charset_zero
