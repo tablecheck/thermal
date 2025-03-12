@@ -14,6 +14,6 @@ gem 'rubocop-rspec'
 gem 'simplecov'
 
 # Development dependencies
-gem 'iconv', platforms: %i[ruby windows]
+gem 'iconv', platforms: %i[ruby windows truffleruby]
 gem 'mini_magick'
 gem 'rqrcode'
