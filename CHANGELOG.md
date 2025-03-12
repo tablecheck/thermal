@@ -1,6 +1,6 @@
 # Thermal Changelog
 
-## 0.2.0 [Unreleased]
+## 0.2.0 (2025-03-12)
 
 - Initial release of new Thermal gem.
 - Support for rich text, image, and QR codes.
@@ -9,7 +9,7 @@
 - Support for output format Star Micronics Extended ESC/POS (UTF-8)
 - Support for output format Starprnt
 - Support for output format Stargraphic (raster-only format) with system-side font generation.
-- Automatic multi-lingual codepage support, including support for **CJK extended character sets**.
+- Automatic multi-lingual codepage support, including support for CJK extended character sets.
 - DSL for rich text output formatting.
 
 ## 0.1.1 (2012-12-27)
