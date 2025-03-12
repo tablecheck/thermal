@@ -1,4 +1,4 @@
-# Thermal
+# Thermal 🖨️
 
 Thermal printer support for Ruby. Used to print receipts, chits, tickets, labels, etc.
 
@@ -7,23 +7,27 @@ Thermal printer support for Ruby. Used to print receipts, chits, tickets, labels
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop/rubocop)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-### Features
+## ⚠️ WARNING: Gem under active development
 
-- Simple and opinionated API. **It just works™**
-- Generates **rich text, image, and QR codes** for thermal printers.
-- Supports a broad range of **makers and models** (Epson, Star Micronics, Brother, PBM, Zijiang, etc.)
-- Automatic **multi-lingual** codepage support, including support for **CJK extended character sets**.
-- **Simple DSL** for rich text output formatting.
-- **Graceful degradation** of features based on printer capabilities.
+**All APIs and features should be considered unstable before 1.0.0 release.**
 
-### Optional Features
+### ✨ Features
 
-- **QR code generation**
+- 🎯 Simple and opinionated API. **It just works™**
+- 🎨 Generates **rich text, image, and QR codes** for thermal printers.
+- 🏭 Supports a broad range of **makers and models** (Epson, Star Micronics, Brother, PBM, Zijiang, etc.)
+- 🌐 Automatic **multi-lingual** codepage support, including support for **CJK extended character sets**.
+- 📝 **Simple DSL** for rich text output formatting.
+- 🛠️ **Graceful degradation** of features based on printer capabilities.
+
+### 🔌 Optional Features
+
+- **QR code generation** 📱
   - Requires [rqrcode](https://github.com/whomwah/rqrcode) gem.
-- Support for **Stargraphic (raster-only format)** using system-side font rendering.
+- Support for **Stargraphic (raster-only format)** using system-side font rendering. 🖼️
   - See requirements below.
 
-### Supported Output Formats
+### 📤 Supported Output Formats
 
 - Epson ESC/POS
   - Industry standard used by most thermal printers
@@ -32,24 +36,24 @@ Thermal printer support for Ruby. Used to print receipts, chits, tickets, labels
   - Starprnt
   - Stargraphic
 
-### Non-Features & Limitations
+### ❌ Non-Features & Limitations
 
-- **HTML-to-text support** (planned, not yet released)
+- **HTML-to-text support** (planned, not yet released) 🔄
   - Requires [nokogiri](https://nokogiri.org/) gem.
 - **No support for wire protocols** such as USB, Bluetooth, etc. This gem is intended
-  to run on a server; it only generates  the instructions/bytes to be sent to the client
+  to run on a server; it only generates the instructions/bytes to be sent to the client
 - (browser, iOS, etc.) which should then send it to the end device.
   - **PR welcome** if someone wants to add USB/Bluetooth support.
-- **Pixel-only printer support (Stargraphic) is rudimentary and slow**, because
+- **Pixel-only printer support (Stargraphic) is rudimentary and slow** 🐢, because
   it uses system-side font rendering ([Pango](https://www.pango.org/)) to generate
   the image data.
   - **PR welcome** to use a different approach and/or make it faster.
 - Table formatting support not yet added. **PR welcome**.
 - Indian ISCII encoding for Escpos is not yet supported. **PR welcome**.
 
-## How to Use
+## 🚀 How to Use
 
-### Installation
+### 📦 Installation
 
 Add this line to your application's Gemfile:
 
@@ -57,9 +61,9 @@ Add this line to your application's Gemfile:
 gem 'thermal'
 ```
 
-### Formatting your Output
+### 🖨️ Formatting your Output
 
-#### Procedural code
+#### ⌨️ Procedural code
 
 Intended API: (needs to be further extracted)
 
@@ -71,7 +75,7 @@ printer.text('Quam vellem nescire litteras!')
 printer.flush # todo: #print!?
 ```
 
-#### DSL
+#### 🧩 DSL
 
 You can also use it as a DSL:
 
@@ -101,7 +105,7 @@ class MyChitPrinter
 end
 ```
 
-#### HTML Conversion
+#### 📃 HTML Conversion
 
 ```ruby
 # TODO: float/tables?
@@ -111,18 +115,20 @@ end
 # 
 ```
 
-
-### Integrating in an app
+### 🚢 Integrating Thermal into your App
 
 - Add details of how to implement a thermal printer config.
 
-### Thread-Safety
 
-- Config loading is thread safe.
-- Don't call the same `Thermal::Printer` object from multiple threads.
-  You're gonna have a bad time.
+### 🚢 Integrating Thermal into your App
 
-### TODOs
+#### 🧵 Thread-Safety
+
+- Thermal's internals are thread-safe in principle.
+- However, don't use the same `Thermal::Printer` object from multiple threads.
+  You're gonna have a bad time. 😵
+
+### 📝 TODOs
 
 Required before releasing.
 - [ ] Yaml safe load
@@ -142,7 +148,7 @@ Required before releasing.
 - [ ] StarGraphic needs multiple message buffering. ???
 - [ ] Add QR to DSL
 
-Nice to haves:
+Nice to haves ✨:
 - [ ] font support. col_width should be dynamic in the printer (currently depends on font 0)
 - [ ] Copy "Available methods" from https://github.com/escpos/escpos-php
 - [ ] Add HTML command in addition to text. Should be done as an AST (HtmlAst) like [[:text, 'ddd'], [:underline, 2, [[:text, 'foo']]]]
@@ -153,29 +159,29 @@ Nice to haves:
 - [ ] Allow pass-in of charset object.
 - [ ] Indian ISCII encoding for Escpos (separate gem?).
 
-# Contributing
+# 👥 Contributing
 
 To add support for additional Thermal printers.
 - escpos-printer-db
 - Add new code in `lib/thermal/printer/escpos.rb`
 - Add new code in `lib/thermal/printer/starprnt.rb`
 
-# Acknowledgements
+# 🙏 Acknowledgements
 
-### Maintainers
+### 👨‍💻 Maintainers
 
 Thermal is maintained and battle-tested by the team at [TableCheck](https://www.tablecheck.com/en/join/)
-based in Tokyo, Japan. We use Thermal to help our restaurant users print chits, receipts, and
+based in Tokyo, Japan. 🗼 We use Thermal to help our restaurant users print chits, receipts, and
 QR codes to serve their guests' reservations. If you are seeking your next career adventure,
 [we're hiring](https://careers.tablecheck.com/)!
 
-### Data Sources
+### 📚 Data Sources
 
 This gem relies on the community-maintained
 [escpos-printer-db](https://github.com/receipt-print-hq/escpos-printer-db)
 to provide a comprehensive list of thermal printers.
 
-### Special Thanks
+### 🌟 Special Thanks
 
 This gem draws inspiration from the following libraries.
 Thank you to the authors for their hard work.
@@ -183,11 +189,11 @@ Thank you to the authors for their hard work.
 - [escpos-printer-db](https://github.com/receipt-print-hq/escpos-printer-db)
 - [EscPosEncoder JS](https://github.com/NielsLeenheer/EscPosEncoder/blob/master/src/esc-pos-encoder.js)
 
-### Copyright Attribution
+### ©️ Copyright Attribution
 
 The vendor manuals in the `doc/vendor` directory are the property of their respective owners.
 They are included here for references purposes only under the fair use doctrine.
 
-### License
+### 📜 License
 
 This gem is released under the MIT License. Please see the [LICENSE](LICENSE) file for details.
