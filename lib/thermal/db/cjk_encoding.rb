@@ -38,7 +38,7 @@ module Db
     def skip?(char)
       # GB18030 has a 4-byte mapping into Unicode which should be skipped.
       # Refer to: https://en.wikipedia.org/wiki/GB_18030#Mapping
-      @ruby == 'GB18030' && char&.bytes&.size == 4
+      @ruby == 'GB18030' && char&.bytesize == 4
     end
   end
 end

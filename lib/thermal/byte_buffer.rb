@@ -31,14 +31,12 @@ module Thermal
       buffer.dup
     end
 
-    # TODO: use .tap method here
     def flush
       tmp = buffer
       @buffer = nil
       tmp
     end
 
-    # TODO: use .tap method here
     def flush_base64
       tmp = to_base64
       flush

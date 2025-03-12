@@ -29,21 +29,21 @@ module Thermal
       # do nothing
     end
 
-    def align(alignment = nil, &block)
+    def align(alignment = nil, &)
       alignment = alignment.downcase.to_sym if alignment.is_a?(String)
       alignment ||= :left
       raise "Invalid align #{alignment.inspect}" unless ALIGNMENTS.include?(alignment)
-      write_style(align: alignment, &block)
+      write_style(align: alignment, &)
     end
 
-    def bold(enabled = true, &block) # rubocop:disable Style/OptionalBooleanParameter
-      write_style(bold: !!enabled, &block)
+    def bold(enabled = true, &) # rubocop:disable Style/OptionalBooleanParameter
+      write_style(bold: !!enabled, &)
     end
 
-    def underline(enabled = true, weight: nil, &block) # rubocop:disable Style/OptionalBooleanParameter
+    def underline(enabled = true, weight: nil, &) # rubocop:disable Style/OptionalBooleanParameter
       underline = weight || enabled
       underline = false if !underline || underline == 0
-      write_style(underline: underline, &block)
+      write_style(underline: underline, &)
     end
 
     def feed

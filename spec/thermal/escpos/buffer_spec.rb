@@ -172,7 +172,7 @@ RSpec.describe ::Thermal::Escpos::Buffer do
             36,        # $
             242, # 年
             243, # 月
-            32,        # space
+            32,  # space
             232, # ♠ (Katakana)
             32,  # space
             27, 116, 16, # Codepage 16 - Euro
@@ -217,7 +217,7 @@ RSpec.describe ::Thermal::Escpos::Buffer do
           233, # ♠ (Katakana)
           28, 38, # CJK on
           234, 197, # 月
-          32,  # space - skip invalid 这
+          32,       # space - skip invalid 这
           227, 192, # 是
           191, 248, # 원
           192, 229, # 장
@@ -233,16 +233,16 @@ RSpec.describe ::Thermal::Escpos::Buffer do
           28, 46, # CJK off
           177, # ｱ
           32,  # space
-          28, 38, # CJK on
-          210, 180, # 年
+          28, 38,    # CJK on
+          210, 180,  # 年
           27, 82, 0, # Charset 0
-          36,  # $
-          210, 180, # 年
-          32,  # space - skip invalid 这
-          234, 197, # 月
-          32,  # space
-          28, 46, # CJK off
-          232  # ♠ (Katakana)
+          36,        # $
+          210, 180,  # 年
+          32,        # space - skip invalid 这
+          234, 197,  # 月
+          32,        # space
+          28, 46,    # CJK off
+          232        # ♠ (Katakana)
         ]
       end
 
@@ -338,8 +338,8 @@ RSpec.describe ::Thermal::Escpos::Buffer do
           32,  # space
           32,  # space - skip invalid 한
           27, 82, 13, # Charset 13 - Korean
-          92,  # ₩
-          185, 219,  # 观 (GB)
+          92,         # ₩
+          185, 219,   # 观 (GB)
           32,  # space
           84,  # T
           101, # e
@@ -439,7 +439,7 @@ RSpec.describe ::Thermal::Escpos::Buffer do
           193, 99,  # 繁 (Big5)
           197, 233, # 體 (Big5)
           166, 114, # 字 (Big5)
-          32,  # space
+          32,         # space
           28, 46,     # CJK off
           27, 116, 1, # Codepage 1 - Kanakana
           241, # 円 (Katakana)
@@ -447,9 +447,9 @@ RSpec.describe ::Thermal::Escpos::Buffer do
           166, 126, # 年 (Big5)
           162, 69,  # 〒 (Big5)
           164, 235, # 月 (Big5)
-          32,  # space - skip invalid 这
-          172, 79, # 是 (Big5)
-          32,  # space - skip invalid 원
+          32,       # space - skip invalid 这
+          172, 79,  # 是 (Big5)
+          32,       # space - skip invalid 원
           32,  # space - skip invalid 장
           32,  # space - skip invalid 의
           27, 82, 13,
@@ -466,11 +466,11 @@ RSpec.describe ::Thermal::Escpos::Buffer do
           28, 38,    # CJK on
           166, 126,  # 年 (Big5)
           27, 82, 0, # Codepage 0
-          36,  # $
-          166, 126, # 年 (Big5)
-          32,  # space - skip invalid 这
-          28, 46, # CJK off
-          232  # ♠ (Katakana)
+          36,        # $
+          166, 126,  # 年 (Big5)
+          32,        # space - skip invalid 这
+          28, 46,    # CJK off
+          232        # ♠ (Katakana)
         ]
       end
 

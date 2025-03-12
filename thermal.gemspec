@@ -18,10 +18,4 @@ Gem::Specification.new do |s|
   s.add_dependency 'unf'
   s.add_dependency 'escpos'
   s.add_dependency 'escpos-image'
-
-  s.add_development_dependency 'rspec'
-  s.add_development_dependency 'simplecov'
-  s.add_development_dependency 'iconv'
-  s.add_development_dependency 'mini_magick'
-  s.add_development_dependency 'rqrcode'
 end

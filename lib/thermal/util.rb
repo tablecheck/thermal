@@ -52,7 +52,7 @@ module Thermal
     def deep_freeze!(object)
       case object
       when Hash
-        object.each {|_k, v| deep_freeze!(v) }
+        object.each_value {|v| deep_freeze!(v) }
       when Array
         object.each {|j| deep_freeze!(j) }
       end
