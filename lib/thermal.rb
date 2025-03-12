@@ -4,6 +4,7 @@ require 'forwardable'
 require 'yaml'
 require 'fileutils'
 require 'pathname'
+require 'base64'
 
 require 'escpos' # TODO: get rid of this
 
