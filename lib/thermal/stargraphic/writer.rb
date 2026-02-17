@@ -213,9 +213,11 @@ module Stargraphic
       end
     end
 
-    def text_image(markup, width: @width, align: :left, font: nil, delete: true)
+    def text_image(markup, width: @width, align: :left, font: 'Sans', delete: true)
       tmp_path = ::Thermal.tmp_path("#{SecureRandom.uuid}.png")
-      font ||= self.class.font
+
+      # TODO: Fix font loading
+      # font ||= self.class.font
 
       begin
         configure = proc do |i|
