@@ -1,5 +1,10 @@
 # Thermal Changelog
 
+## v0.2.1 - 2026-02-17
+
+- Stargraphic: Add support for MiniMagick 5+.
+- Stargraphic: Ensure font is used correctly.
+
 ## v0.2.0 - 2025-03-12
 
 - Initial release of new Thermal gem.

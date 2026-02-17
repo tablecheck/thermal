@@ -13,7 +13,7 @@ module Thermal
     CODEPOINTS_CJK_SKIP = [
       "\u2500".."\u259F", # box drawing + block elements
       "\u2660".."\u2667"  # card suits
-    ].map(&:to_a).flatten.join.each_codepoint.to_a.freeze
+    ].map(&:to_a).join.each_codepoint.to_a.freeze
 
     # These characters exist in the Katakana codepage,
     # but should use CJK encoding if available.
