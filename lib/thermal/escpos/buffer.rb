@@ -90,8 +90,8 @@ module Escpos
 
     def ascii?(codepoint, extended: false)
       (codepoint == 10) ||
-        (codepoint >= 32 && codepoint <= 126) ||
-        (extended && codepoint >= 128 && codepoint <= 255)
+        codepoint.between?(32, 126) ||
+        (extended && codepoint.between?(128, 255))
     end
 
     def set_charset(charset) # rubocop:disable Naming/AccessorMethodName

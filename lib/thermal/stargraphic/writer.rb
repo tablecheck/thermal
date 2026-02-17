@@ -213,11 +213,12 @@ module Stargraphic
       end
     end
 
-    def text_image(markup, width: @width, align: :left, font: 'Sans', delete: true)
+    def text_image(markup, width: @width, align: :left, font: nil, delete: true)
       tmp_path = ::Thermal.tmp_path("#{SecureRandom.uuid}.png")
+      font ||= self.class.font
 
       begin
-        ::MiniMagick::Tool::Convert.new do |i|
+        configure = proc do |i|
           i << '+antialias'
           i << '+dither'
           i.size width
@@ -231,6 +232,12 @@ module Stargraphic
           i.depth 1
           i.negate
           i << tmp_path
+        end
+
+        if ::MiniMagick.respond_to?(:convert) # MiniMagick 5+
+          ::MiniMagick.convert(&configure)
+        else
+          ::MiniMagick::Tool::Convert.new(&configure)
         end
       rescue StandardError => e
         Bugsnag.notify(e) do |r|

@@ -71,7 +71,8 @@ module Db
     end
 
     def charset_index
-      @charset_index ||= charsets.values.map! { |c| ::Thermal::Util.index_with(c.u_codepoints, c.key) }
+      @charset_index ||= charsets.values
+                                 .map! { |c| ::Thermal::Util.index_with(c.u_codepoints, c.key) }
                                  .reverse.inject(&:merge).freeze
     end
   end
