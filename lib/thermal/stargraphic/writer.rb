@@ -190,34 +190,19 @@ module Stargraphic
       append_raw [27, 12, 25]
     end
 
+    CJK_FONTS = {
+      'shift_jis' => 'Noto Sans JP',
+      'gb18030'   => 'Noto Sans SC',
+      'big5'      => 'Noto Sans TC',
+      'ksc5601'   => 'Noto Sans KR'
+    }.freeze
+
     def font
-      self.class.font
+      CJK_FONTS[@profile.cjk_encoding&.key] || 'Noto Sans'
     end
 
-    class << self
-      # Persists font as singleton
-      def font
-        @font ||= if OS.windows?
-                    'Sans'
-                  else
-                    font_list = begin
-                      `fc-list`
-                    rescue StandardError
-                      ''
-                    end
-                    case font_list
-                    when /NotoSans/ then 'NotoSans'
-                    else 'Sans'
-                    end
-                  end
-      end
-    end
-
-    def text_image(markup, width: @width, align: :left, font: 'Sans', delete: true)
+    def text_image(markup, width: @width, align: :left, font: self.font, delete: true)
       tmp_path = ::Thermal.tmp_path("#{SecureRandom.uuid}.png")
-
-      # TODO: Fix font loading
-      # font ||= self.class.font
 
       begin
         configure = proc do |i|
